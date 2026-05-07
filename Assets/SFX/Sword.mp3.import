@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sword.mp3-3336460806e3942f6bab12b6a7779593.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Sword.mp3"
+dest_files=[ "res://.import/Sword.mp3-3336460806e3942f6bab12b6a7779593.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

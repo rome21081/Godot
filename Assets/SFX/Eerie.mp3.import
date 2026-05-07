@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Eerie.mp3-64b4adb483af275ca8291e2579e8b7ee.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Eerie.mp3"
+dest_files=[ "res://.import/Eerie.mp3-64b4adb483af275ca8291e2579e8b7ee.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

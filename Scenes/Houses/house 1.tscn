@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/house/asdwasc.png" type="Texture" id=1]
+
+[node name="house 1" type="Sprite"]
+position = Vector2( 159, 187 )
+scale = Vector2( 0.548747, 0.548747 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -120 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 3.64462, -122.096 )
+polygon = PoolVector2Array( -67.4264, 293.396, -96.5836, 297.04, -87.472, 225.969, -85.6496, 189.523, -58.3147, 156.721, -82.005, 169.477, -56.4923, 134.853, -43.736, 85.6497, -7.28937, 58.3146, 96.5837, 69.2487, 156.721, 100.228, 204.101, 105.695, 213.213, 165.832, 205.923, 215.035, 211.39, 253.304, 225.969, 291.573, 176.766, 280.639, 176.766, 205.924, 174.944, 154.898, 158.543, 123.919, 116.629, 100.228, 78.3604, 87.472, 18.2233, 89.2943, -21.868, 109.34, -52.8477, 142.142 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2( 3.64468, -111.162 )
+scale = Vector2( 0.991488, 1 )
+polygon = PoolVector2Array( -227.909, 176.766, -204.015, 187.7, -205.853, 187.7, -156.228, 191.345, -150.714, 205.924, -264.669, 204.101, -262.831, 187.7, -249.965, 187.7, -240.775, 184.056, -235.261, 154.898 )

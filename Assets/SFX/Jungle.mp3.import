@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Jungle.mp3-f1272fc57124d4f021c2e7f5f97b9b84.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Jungle.mp3"
+dest_files=[ "res://.import/Jungle.mp3-f1272fc57124d4f021c2e7f5f97b9b84.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

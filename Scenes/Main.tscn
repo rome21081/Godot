@@ -1,0 +1,312 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/npc.gd" type="Script" id=3]
+[ext_resource path="res://Images/green_bg2.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/SynbolEvent.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/SFX/Eerie.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Babaylan.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Chapter1.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Houses/house 1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Itak.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Fade.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Houses/house 2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Houses/towerr.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Houses/house guard.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Houses/templee2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Houses/houseee9.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Houses/house 5.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Houses/watch guard.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Houses/nipa.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Houses/watcher house.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Houses/housee6.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Houses/house 3.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Houses/boneess.tscn" type="PackedScene" id=24]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 65, -54 )
+script = ExtResource( 9 )
+
+[node name="background" type="Node2D" parent="."]
+scale = Vector2( 1.69425, 2.09064 )
+
+[node name="TextureRect" type="TextureRect" parent="background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="background"]
+margin_left = -13.5753
+margin_top = -989.65
+margin_right = 1522.42
+margin_bottom = 34.3499
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="background"]
+margin_left = 1516.9
+margin_top = -991.085
+margin_right = 3052.9
+margin_bottom = 32.915
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="background"]
+margin_left = 1536.0
+margin_right = 3072.0
+margin_bottom = 1024.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/StaticBody2D"]
+polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.57, 3065.26, 1099.03, -62.8719, 1112.48, -62.8719, -128.683, 3193.08, -101.774, 3176.26, 1102.39, 3074.03, 1002.9, 3075.35, 9.22449 )
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( 572, 162 )
+scale = Vector2( 0.584004, 0.584004 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -589.037, 640.406 )
+scale = Vector2( 1.71232, 1.71232 )
+
+[node name="Camera2D2" type="Camera2D" parent="YSort/Player"]
+position = Vector2( 5, -10 )
+current = true
+limit_left = 65
+limit_top = -250
+limit_right = 5000
+limit_bottom = 2000
+smoothing_enabled = true
+editor_draw_screen = false
+
+[node name="NPC" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -518.832, 1128.42 )
+scale = Vector2( 1.63995, 1.63995 )
+script = ExtResource( 3 )
+
+[node name="UI" parent="YSort" instance=ExtResource( 7 )]
+
+[node name="Babaylan" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 6987.96, 200.341 )
+scale = Vector2( 1.22515, 1.22515 )
+
+[node name="Symbol" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 3599.29, 1446.91 )
+scale = Vector2( 1.23425, 1.23425 )
+
+[node name="boneess" parent="YSort" instance=ExtResource( 24 )]
+position = Vector2( 3063.33, 1614.71 )
+scale = Vector2( 2.13513, 2.13513 )
+
+[node name="boneess9" parent="YSort" instance=ExtResource( 24 )]
+position = Vector2( 4006.82, 1491.43 )
+scale = Vector2( 2.13513, 2.13513 )
+
+[node name="boneess2" parent="YSort" instance=ExtResource( 24 )]
+position = Vector2( 2464.02, 530.818 )
+scale = Vector2( 2.13513, 2.13513 )
+
+[node name="boneess3" parent="YSort" instance=ExtResource( 24 )]
+position = Vector2( 3263.67, 787.665 )
+scale = Vector2( 2.13513, 2.13513 )
+
+[node name="boneess4" parent="YSort" instance=ExtResource( 24 )]
+position = Vector2( 4265.38, 238.012 )
+scale = Vector2( 2.13513, 2.13513 )
+
+[node name="boneess5" parent="YSort" instance=ExtResource( 24 )]
+position = Vector2( 4659.21, 405.819 )
+scale = Vector2( 2.13513, 2.13513 )
+
+[node name="boneess6" parent="YSort" instance=ExtResource( 24 )]
+position = Vector2( 4174.63, 2066.77 )
+scale = Vector2( 2.13513, 2.13513 )
+
+[node name="boneess7" parent="YSort" instance=ExtResource( 24 )]
+position = Vector2( 3443.47, 2073.61 )
+scale = Vector2( 2.13513, 2.13513 )
+
+[node name="boneess8" parent="YSort" instance=ExtResource( 24 )]
+position = Vector2( 5059.89, 1279.1 )
+scale = Vector2( 2.13513, 2.13513 )
+
+[node name="nipa2" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( 2147.24, 2121.56 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="nipa4" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( 1602.73, 2535.94 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="nipa6" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( 1910.94, 2946.9 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="nipa7" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( 1345.88, 3070.18 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="nipa8" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( 1263.69, 1479.44 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="nipa9" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( 791.09, 2967.44 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="nipa3" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( 1659.23, 1763.69 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="nipa5" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( 1042.8, 2614.71 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -477.736, 2207.25 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard2" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -24.3267, 2215.81 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard3" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 426.367, 2215.81 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard7" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -477.736, 3181.56 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard8" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -6.10352e-05, 3190.12 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard9" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 414.38, 3190.12 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard10" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -1698.97, 3181.56 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard11" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -1329.11, 3190.12 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard12" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -962.676, 3190.12 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard13" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -1688.7, 2739.78 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard14" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -1318.84, 2748.34 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard15" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -952.402, 2748.34 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard4" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -477.736, 2720.95 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard5" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -20.5479, 2729.51 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="house guard6" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 407.531, 2729.51 )
+scale = Vector2( 0.654957, 0.654957 )
+
+[node name="towerr" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -606.16, -148.971 )
+scale = Vector2( 1.21843, 1.21843 )
+
+[node name="house6" parent="YSort" instance=ExtResource( 22 )]
+position = Vector2( 2916.07, 291.094 )
+scale = Vector2( 1.09129, 1.09129 )
+
+[node name="house7" parent="YSort" instance=ExtResource( 22 )]
+position = Vector2( 3537.65, 291.094 )
+scale = Vector2( 1.09129, 1.09129 )
+
+[node name="towerr2" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 2422.93, 2703.75 )
+scale = Vector2( 1.21843, 1.21843 )
+
+[node name="Sprite" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 1419.51, 224.313 )
+scale = Vector2( 1.21843, 1.21843 )
+
+[node name="house 2" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 683.214, 1207.18 )
+scale = Vector2( 0.787149, 0.787149 )
+
+[node name="House 2" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( -1051.36, 2393.82 )
+scale = Vector2( 1, 1 )
+
+[node name="house 3" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 669.516, -457.188 )
+scale = Vector2( 0.787149, 0.787149 )
+
+[node name="house 5" parent="YSort" instance=ExtResource( 18 )]
+position = Vector2( -256.848, 977.732 )
+scale = Vector2( 1, 1 )
+
+[node name="houseee9" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 2174.64, -311.642 )
+scale = Vector2( 1, 1 )
+
+[node name="watch guard" parent="YSort" instance=ExtResource( 19 )]
+position = Vector2( -926.363, 202.053 )
+scale = Vector2( 0.819706, 0.819706 )
+
+[node name="houseee10" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 3075.32, 2883.54 )
+scale = Vector2( 1, 1 )
+
+[node name="House 1" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( -97.6022, 10.2739 )
+scale = Vector2( 1, 1 )
+
+[node name="Sprite2" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( -738.008, 1631.84 )
+scale = Vector2( 0.990415, 0.990415 )
+
+[node name="watcher house" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( 888.692, 1958.89 )
+scale = Vector2( 1.71232, 1.71232 )
+
+[node name="house 4" parent="YSort" instance=ExtResource( 23 )]
+position = Vector2( 633.557, 200.341 )
+scale = Vector2( 0.794103, 0.794103 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.258824, 0.258824, 0.258824, 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="Hasaan" parent="." instance=ExtResource( 11 )]
+position = Vector2( 606, 906 )
+rotation = -0.62148
+scale = Vector2( 0.42738, 0.465631 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[connection signal="body_entered" from="YSort/NPC" to="YSort/NPC" method="_on_NPC_body_entered"]
+[connection signal="body_exited" from="YSort/NPC" to="YSort/NPC" method="_on_NPC_body_exited"]
+[connection signal="body_entered" from="YSort/Babaylan" to="YSort/Babaylan" method="_on_Babaylan_body_entered"]
+[connection signal="body_entered" from="YSort/Symbol" to="YSort/Symbol" method="_on_Symbol_body_entered"]

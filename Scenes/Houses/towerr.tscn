@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/house/towerr.png" type="Texture" id=1]
+
+[node name="towerr" type="Sprite"]
+position = Vector2( 438, 181 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -120 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 446, 32 )
+polygon = PoolVector2Array( -419, -104, -443, -118, -454, -118, -443, -76, -461, -54, -517, -83, -498, -32, -516, -93, -532, 29, -517, 40, -486, 43, -459, 50, -414, 60, -380, 64, -360, 64, -352, 67, -360, -53, -360, -86, -374, -88, -387, -84, -402, -74 )

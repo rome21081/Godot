@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/house/asdwecc.png" type="Texture" id=1]
+
+[node name="house 3" type="Sprite"]
+position = Vector2( 390, 305 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -293, 136, -354, -11, 359, -5, 292, 123 )
