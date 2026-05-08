@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/SFX/Jungle.mp3" type="AudioStream" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Kapre.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/CigarSmoke.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 234, 253, 244, 225, 419, 216, 429, 262, 550, 305, 562, 347, 624, 381, 420, 395, 178, 398, 26, 375 )
@@ -71,6 +72,9 @@ tile_set = SubResource( 2 )
 format = 1
 tile_data = PoolIntArray( -196597, 0, 0, -196583, 0, 0, 11, 0, 0, 26, 0, 0 )
 
+[node name="CigarSmoke" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2373, 433 )
+
 [node name="Kapre" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1664, 154 )
 scale = Vector2( 3, 3 )
@@ -107,6 +111,7 @@ autoplay = true
 position = Vector2( 615, 70 )
 scale = Vector2( 0.3, 0.3 )
 
+[connection signal="body_entered" from="CigarSmoke" to="CigarSmoke" method="_on_CigarSmoke_body_entered"]
 [connection signal="body_entered" from="Kapre" to="Kapre" method="_on_Kapre_body_entered"]
 [connection signal="body_exited" from="Kapre" to="Kapre" method="_on_Kapre_body_exited"]
 [connection signal="body_entered" from="Torch" to="Torch" method="_on_Torch_body_entered"]

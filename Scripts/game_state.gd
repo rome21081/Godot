@@ -1,10 +1,14 @@
 extends Node
 
+var player_position = Vector2.ZERO
+
+var talked_to_babaylan = false
+var has_tikbalang_fragment = false
+var has_cigar_smoke
+
 var chapter = 1
 var found_symbol = false
-var talked_to_babaylan = false
 var hasaan = false
-var has_tikbalang_fragment = false
 var has_torch = false
 var kapre_approves = false
 var notes_collected = {

@@ -175,14 +175,12 @@ func final_judgment():
 
 		DialogueManager.start([
 			"Kapre: Your spirit is unclear.",
+			"I'll send you back",
 			"Return when you understand the forest."
 		], 3)
 
-		print(">>> FAIL REACHED")
 		yield(DialogueManager, "dialogue_finished")
-		print(">>> AFTER DIALOGUE")
 		get_tree().change_scene("res://Scenes/Balete.tscn")
-		print(">>> AFTER CHANGE_SCENE")
 
 
 # -------------------------
