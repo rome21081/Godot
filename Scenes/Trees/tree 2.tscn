@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/trees/tree2.png" type="Texture" id=1]
+
+[node name="tree 2" type="Sprite"]
+position = Vector2( 369, 224 )
+scale = Vector2( 4.76402, 4.76402 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -5.6675, 16.5826, -6.29722, 4.61794, 3.98822, 2.30897, 5.87738, 4.40804, 4.82784, 19.7312, -2.93871, 20.151 )

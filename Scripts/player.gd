@@ -8,6 +8,18 @@ var is_attacking = false
 func _physics_process(delta):
 
 	if DialogueManager.is_active:
+		velocity = Vector2.ZERO
+
+		if $AnimatedSprite.animation == "right":
+			$AnimatedSprite.play("idle_right")
+		elif $AnimatedSprite.animation == "left":
+			$AnimatedSprite.play("idle_left")
+		elif $AnimatedSprite.animation == "up":
+			$AnimatedSprite.play("idle_up")
+		elif $AnimatedSprite.animation == "down":
+			$AnimatedSprite.play("idle_down")
+
+		move_and_slide(Vector2.ZERO)
 		return
 
 	if is_attacking:
@@ -19,21 +31,32 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
 		$AnimatedSprite.play("right")
+		
+	elif Input.is_action_just_released("ui_right"):
+		$AnimatedSprite.play("idle_right")
 
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
 		$AnimatedSprite.play("left")
+		
+	elif Input.is_action_just_released("ui_left"):
+		$AnimatedSprite.play("idle_left")
 
 	elif Input.is_action_pressed("ui_down"):
 		velocity.y += 1
 		$AnimatedSprite.play("down")
+		
+	elif Input.is_action_just_released("ui_down"):
+		$AnimatedSprite.play("idle_down")
 
 	elif Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 		$AnimatedSprite.play("up")
+	
+	elif Input.is_action_just_released("ui_up"):
+		$AnimatedSprite.play("idle_up")
 
-	else:
-		$AnimatedSprite.play("idle")
+	
 
 	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
@@ -71,9 +94,35 @@ func _on_Area2D_body_entered(body):
 		return
 
 	DialogueManager.start([
-		"Entering Town Hall",
+		"Entering House",
 	])
 
 	yield(DialogueManager, "dialogue_finished")
 	yield(Fade.fade_out(1.0), "completed")
 	get_tree().change_scene("res://Scenes/Houses/HallInterior.tscn")
+
+
+func _on_House1_body_entered(body):
+	if body.name != "Player":
+		return
+
+	DialogueManager.start([
+		"Entering Captain's House",
+	])
+
+	yield(DialogueManager, "dialogue_finished")
+	yield(Fade.fade_out(1.0), "completed")
+	get_tree().change_scene("res://Scenes/Houses/HouseInterior2.tscn")
+
+
+func _on_House2_body_entered(body):
+	if body.name != "Player":
+		return
+
+	DialogueManager.start([
+		"Entering House",
+	])
+
+	yield(DialogueManager, "dialogue_finished")
+	yield(Fade.fade_out(1.0), "completed")
+	get_tree().change_scene("res://Scenes/Houses/HouseInterior.tscn")

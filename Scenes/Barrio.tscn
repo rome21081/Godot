@@ -1,17 +1,24 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/SFX/Jungle.mp3" type="AudioStream" id=2]
 [ext_resource path="res://Scripts/chapter4.gd" type="Script" id=3]
 [ext_resource path="res://Images/green_bg2.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Houses/hall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Houses/houuseeee2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/suspect2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/suspect1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/suspect3.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Fade.tscn" type="PackedScene" id=12]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 45.8302
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 47.5657
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2( 65, -54 )
 script = ExtResource( 3 )
 
@@ -41,31 +48,35 @@ polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.5
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
 
+[node name="houuseeee2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1078, 52.0001 )
+scale = Vector2( 0.81068, 0.720741 )
+
+[node name="House" type="Area2D" parent="houuseeee2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="houuseeee2/House"]
+position = Vector2( -85.1138, 241.418 )
+shape = SubResource( 2 )
+
+[node name="houuseeee3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2853, 466 )
+scale = Vector2( 0.81068, 0.720741 )
+
+[node name="House2" type="Area2D" parent="houuseeee3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="houuseeee3/House2"]
+position = Vector2( -85.1138, 241.418 )
+shape = SubResource( 2 )
+
 [node name="hall" parent="." instance=ExtResource( 5 )]
 position = Vector2( 629, 71 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="Area2D" type="Area2D" parent="hall"]
-scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hall/Area2D"]
 position = Vector2( 0, 201.25 )
 shape = SubResource( 1 )
-
-[node name="Player" parent="." groups=["player"] instance=ExtResource( 1 )]
-position = Vector2( 272.5, 539 )
-scale = Vector2( 0.65, 0.65 )
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-position = Vector2( -1, 0 )
-current = true
-zoom = Vector2( 0.65, 0.65 )
-limit_left = 65
-limit_top = -55
-limit_right = 3137
-limit_bottom = 969
-smoothing_enabled = true
-editor_draw_limits = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
@@ -74,4 +85,33 @@ autoplay = true
 [node name="CanvasLayer" parent="." instance=ExtResource( 12 )]
 visible = false
 
+[node name="suspect1" parent="." instance=ExtResource( 9 )]
+position = Vector2( 121, 891 )
+
+[node name="suspect2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 475, 884 )
+
+[node name="suspect3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 905, 813 )
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource( 1 )]
+position = Vector2( 272.5, 539 )
+scale = Vector2( 0.65, 0.65 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 2.30768, 3.0769 )
+current = true
+zoom = Vector2( 0.65, 0.65 )
+limit_left = 63
+limit_top = -55
+limit_right = 3137
+limit_bottom = 969
+smoothing_enabled = true
+editor_draw_limits = true
+
+[connection signal="body_entered" from="houuseeee2/House" to="Player" method="_on_House1_body_entered"]
+[connection signal="body_entered" from="houuseeee3/House2" to="Player" method="_on_House2_body_entered"]
 [connection signal="body_entered" from="hall/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="suspect1" to="suspect1" method="_on_suspect1_body_entered"]
+[connection signal="body_entered" from="suspect2" to="suspect2" method="_on_suspect2_body_entered"]
+[connection signal="body_entered" from="suspect3" to="suspect3" method="_on_suspect3_body_entered"]

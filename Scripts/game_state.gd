@@ -2,6 +2,13 @@ extends Node
 
 var player_position = Vector2.ZERO
 
+var talked_to_captain = false
+var has_garlic = false
+var has_blessed_oil = false
+var aswang_found = false
+var aswang_killed = false
+
+
 var talked_to_babaylan = false
 var has_tikbalang_fragment = false
 var has_cigar_smoke
