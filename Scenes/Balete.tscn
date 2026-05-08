@@ -144,7 +144,6 @@ scale = Vector2( 0.65, 0.65 )
 
 [node name="Camera2D2" type="Camera2D" parent="YSort/Player"]
 position = Vector2( -1, 0 )
-current = true
 zoom = Vector2( 0.65, 0.65 )
 limit_left = 65
 limit_top = -55

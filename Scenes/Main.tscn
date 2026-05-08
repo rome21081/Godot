@@ -28,7 +28,7 @@
 [ext_resource path="res://Scenes/Trees/Tree 1.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/Trees/tree 2.tscn" type="PackedScene" id=27]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2( 65, -54 )
 script = ExtResource( 9 )
 
