@@ -22,7 +22,6 @@ func _ready():
 	reset_state()
 
 func start(dialogue, chapter_id = 1):
-
 	# 🔥 HARD RESET EVERYTHING FIRST
 	reset_state()
 
@@ -54,7 +53,7 @@ func show_next():
 func next():
 	if waiting_for_choice:
 		return
-
+	print("next called")
 	show_next()
 
 
@@ -109,3 +108,4 @@ func reset_state():
 	waiting_for_choice = false
 	choice_target = null
 	choice_method = ""
+

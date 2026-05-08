@@ -64,3 +64,16 @@ func attack():
 	yield($AnimatedSprite, "animation_finished")
 
 	is_attacking = false
+
+
+func _on_Area2D_body_entered(body):
+	if body.name != "Player":
+		return
+
+	DialogueManager.start([
+		"Entering Town Hall",
+	])
+
+	yield(DialogueManager, "dialogue_finished")
+	yield(Fade.fade_out(1.0), "completed")
+	get_tree().change_scene("res://Scenes/Houses/HallInterior.tscn")

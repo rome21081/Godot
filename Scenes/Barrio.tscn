@@ -1,17 +1,22 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/SFX/Jungle.mp3" type="AudioStream" id=2]
-[ext_resource path="res://Scripts/chapter2.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/chapter4.gd" type="Script" id=3]
 [ext_resource path="res://Images/green_bg2.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Houses/hall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Fade.tscn" type="PackedScene" id=12]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 47.5657
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 65, -54 )
 script = ExtResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.121569, 0.113725, 0.113725, 1 )
 
 [node name="background" type="Node2D" parent="."]
@@ -36,6 +41,17 @@ polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.5
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
 
+[node name="hall" parent="." instance=ExtResource( 5 )]
+position = Vector2( 629, 71 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Area2D" type="Area2D" parent="hall"]
+scale = Vector2( 1, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hall/Area2D"]
+position = Vector2( 0, 201.25 )
+shape = SubResource( 1 )
+
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 1 )]
 position = Vector2( 272.5, 539 )
 scale = Vector2( 0.65, 0.65 )
@@ -57,3 +73,5 @@ autoplay = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 12 )]
 visible = false
+
+[connection signal="body_entered" from="hall/Area2D" to="Player" method="_on_Area2D_body_entered"]

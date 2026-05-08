@@ -79,6 +79,10 @@ position = Vector2( 2373, 433 )
 position = Vector2( 1664, 154 )
 scale = Vector2( 3, 3 )
 
+[node name="Torch" parent="." instance=ExtResource( 8 )]
+position = Vector2( 615, 70 )
+scale = Vector2( 0.3, 0.3 )
+
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 1 )]
 position = Vector2( 272.5, 539 )
 scale = Vector2( 0.65, 0.65 )
@@ -106,10 +110,6 @@ tile_data = PoolIntArray( -196597, 0, 0, 11, 0, 0, 458763, 0, 0, 458778, 0, 0, 6
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
-
-[node name="Torch" parent="." instance=ExtResource( 8 )]
-position = Vector2( 615, 70 )
-scale = Vector2( 0.3, 0.3 )
 
 [connection signal="body_entered" from="CigarSmoke" to="CigarSmoke" method="_on_CigarSmoke_body_entered"]
 [connection signal="body_entered" from="Kapre" to="Kapre" method="_on_Kapre_body_entered"]
