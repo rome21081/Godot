@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/SFX/Jungle.mp3" type="AudioStream" id=2]
@@ -10,9 +10,32 @@
 [ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Kapre.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/CigarSmoke.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Rocks/Cave_entrance2_ground_shadow.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Rocks/Dragon_bones_body_grass_shadow.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Rocks/Oval_rock2_grass_shadow.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Magical Trees/Light_balls_tree1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Magical Trees/Light_balls_tree2.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Rocks/Rock_statue_old_man_ground_shadow.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Rocks/Oval_rock2_ground_shadow.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Magical Trees/Ent_woman.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Rocks/Rock_statue_head_grass_shadow.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Magical Trees/Light_balls_tree3.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Magical Trees/Curved_tree1.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Magical Trees/Ent_man.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Magical Trees/Living gazebo1.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Magical Trees/Mega_tree1.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Magical Trees/Tree_idol_human.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Magical Trees/Willow3.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Magical Trees/Tree_idol_wolf.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Magical Trees/White_tree2.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Magical Trees/Tree_idol_dragon.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Magical Trees/Mega_tree2.png" type="Texture" id=30]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 234, 253, 244, 225, 419, 216, 429, 262, 550, 305, 562, 347, 624, 381, 420, 395, 178, 398, 26, 375 )
+points = PoolVector2Array( 263, 261, 231, 229, 423, 229, 423, 261, 583, 357, 423, 357, 327, 357, 231, 357, 135, 357, 39, 357 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 30.4668, 46.7466, 36.7462, 44.1883, 49.3048, 39.3044, 51.1654, 44.6535, 50.4677, 50.9328, 46.2815, 54.1888, 40.2347, 56.747, 25.3503, 52.5608, 23.2572, 54.8865, 17.9082, 56.747, 11.8614, 51.6305, 13.4894, 41.6301, 16.7453, 41.3975 )
 
 [sub_resource type="TileSet" id=2]
 0/name = "balete-removebg-preview.png 0"
@@ -36,6 +59,50 @@ points = PoolVector2Array( 234, 253, 244, 225, 419, 216, 429, 262, 550, 305, 562
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
+1/name = "Cave_entrance2_ground_shadow.png 1"
+1/texture = ExtResource( 11 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 32, 32, 32, 32 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 0
+1/autotile/bitmask_flags = [  ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 32, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Cave_entrance2_ground_shadow.png 2"
+2/texture = ExtResource( 11 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 4 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 65, -54 )
@@ -62,28 +129,20 @@ stretch_mode = 4
 [node name="StaticBody2D" type="StaticBody2D" parent="background"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/StaticBody2D"]
-polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.57, 3065.26, 1099.03, -62.8719, 1112.48, -62.8719, -128.683, 3193.08, -101.774, 3176.26, 1102.39, 3074.03, 1002.9, 3075.35, 9.22449 )
+polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.57, 3065.26, 1099.03, -62.8719, 1112.48, -62.8719, -128.683, 1012.95, -119.792, 3193.08, -101.774, 3176.26, 1102.39, 3074.03, 1002.9, 3075.35, 9.22449 )
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
 
-[node name="TileMap" type="TileMap" parent="."]
-mode = 2
-tile_set = SubResource( 2 )
-format = 1
-tile_data = PoolIntArray( -196597, 0, 0, -196583, 0, 0, 11, 0, 0, 26, 0, 0 )
+[node name="Root" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1203, 715 )
 
-[node name="CigarSmoke" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2373, 433 )
-
-[node name="Kapre" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1664, 154 )
-scale = Vector2( 3, 3 )
-
-[node name="Player" parent="." groups=["player"] instance=ExtResource( 1 )]
+[node name="YSort" type="YSort" parent="."]
 position = Vector2( 272.5, 539 )
 scale = Vector2( 0.65, 0.65 )
 
-[node name="Camera2D2" type="Camera2D" parent="Player"]
+[node name="Player" parent="YSort" groups=["player"] instance=ExtResource( 1 )]
+
+[node name="Camera2D2" type="Camera2D" parent="YSort/Player"]
 position = Vector2( -1, 0 )
 current = true
 zoom = Vector2( 0.65, 0.65 )
@@ -94,24 +153,560 @@ limit_bottom = 969
 smoothing_enabled = true
 editor_draw_limits = true
 
-[node name="Root" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1203, 715 )
-
-[node name="TileMap2" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="YSort"]
+position = Vector2( -419.231, -829.231 )
+scale = Vector2( 1.53846, 1.53846 )
 mode = 2
 tile_set = SubResource( 2 )
 format = 1
-tile_data = PoolIntArray( -196597, 0, 0, 11, 0, 0, 458763, 0, 0, 458778, 0, 0, 655371, 0, 0, 655385, 0, 0 )
+tile_data = PoolIntArray( -196597, 0, 0, 11, 0, 0, 29, 0, 0, 65565, 0, 0, 131101, 0, 0, 196635, 0, 0, 196638, 0, 0, 262171, 0, 0, 262175, 0, 0, 327707, 0, 0, 327711, 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="YSort"]
+position = Vector2( 3240.77, 229.231 )
+rotation = -0.183108
+scale = Vector2( 4.52072, 4.52072 )
+texture = ExtResource( 12 )
+
+[node name="Sprite5" type="Sprite" parent="YSort"]
+position = Vector2( -394.615, -401.538 )
+rotation = -0.183108
+scale = Vector2( 4.65954, 4.65954 )
+texture = ExtResource( 29 )
+
+[node name="Sprite2" type="Sprite" parent="YSort"]
+position = Vector2( 2557.69, 255.385 )
+rotation = -0.183108
+scale = Vector2( 2.48176, 2.48176 )
+texture = ExtResource( 13 )
+
+[node name="Sprite3" type="Sprite" parent="YSort"]
+position = Vector2( 2653.08, 260 )
+rotation = -0.183108
+scale = Vector2( 2.42761, 2.42761 )
+texture = ExtResource( 17 )
+
+[node name="Kapre" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 2859.23, 223.077 )
+scale = Vector2( 4.24581, 4.24581 )
+
+[node name="gazeboo" type="Sprite" parent="YSort"]
+position = Vector2( 1662.31, -724.615 )
+rotation = -0.0132645
+scale = Vector2( 6.79422, 6.79422 )
+texture = ExtResource( 23 )
+
+[node name="gazeboo2" type="Sprite" parent="YSort"]
+position = Vector2( 2225.38, -732.308 )
+rotation = -0.0132645
+scale = Vector2( 6.79422, 6.79422 )
+texture = ExtResource( 23 )
+
+[node name="TileMap2" type="TileMap" parent="YSort"]
+position = Vector2( -419.231, -829.231 )
+scale = Vector2( 1.53846, 1.53846 )
+mode = 2
+tile_set = SubResource( 2 )
+format = 1
+tile_data = PoolIntArray( -196597, 0, 0, 11, 0, 0, 524300, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0 )
+
+[node name="Sprite4" type="Sprite" parent="YSort"]
+position = Vector2( 3682.31, -778.462 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 21 )
+
+[node name="Sprite8" type="Sprite" parent="YSort"]
+position = Vector2( 4205.38, -770.769 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 21 )
+
+[node name="Sprite10" type="Sprite" parent="YSort"]
+position = Vector2( 3668.46, -332.308 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 21 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Sprite10"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Sprite10/StaticBody2D"]
+polygon = PoolVector2Array( -2.88605, 2.45838, -15.8326, 10.49, -10.5403, 14.8402, -1.28278, 16.033, 3.38141, 13.9548, 4.91669, 5.77189, 6.42822, -0.628052 )
+
+[node name="Sprite15" type="Sprite" parent="YSort"]
+position = Vector2( 4202.31, -333.846 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 21 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Sprite15"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Sprite15/StaticBody2D"]
+polygon = PoolVector2Array( -2.88605, 2.45838, -15.8326, 10.49, -10.5403, 14.8402, -1.28278, 16.033, 3.38141, 13.9548, 4.91669, 5.77189, 6.42822, -0.628052 )
+
+[node name="Sprite11" type="Sprite" parent="YSort"]
+position = Vector2( 3937.69, -896.923 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 22 )
+
+[node name="Sprite12" type="Sprite" parent="YSort"]
+position = Vector2( 3634.62, -123.077 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 18 )
+
+[node name="Sprite13" type="Sprite" parent="YSort"]
+position = Vector2( 4190, -107.692 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 18 )
+
+[node name="Many light2" type="Sprite" parent="YSort"]
+position = Vector2( 2030, -423.077 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="Many light4" type="Sprite" parent="YSort"]
+position = Vector2( 1599.23, -421.538 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="Many light5" type="Sprite" parent="YSort"]
+position = Vector2( 1842.31, 543.077 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="Many light6" type="Sprite" parent="YSort"]
+position = Vector2( 1970, 555.385 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="Many light7" type="Sprite" parent="YSort"]
+position = Vector2( 1970, 555.385 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="Many light8" type="Sprite" parent="YSort"]
+position = Vector2( 2080.77, 555.385 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="Many light9" type="Sprite" parent="YSort"]
+position = Vector2( 2080.77, 555.385 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="Many light10" type="Sprite" parent="YSort"]
+position = Vector2( 2199.23, 550.769 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="Many light11" type="Sprite" parent="YSort"]
+position = Vector2( 2305.38, 543.077 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="Many light12" type="Sprite" parent="YSort"]
+position = Vector2( 2420.77, 547.692 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="Many light3" type="Sprite" parent="YSort"]
+position = Vector2( 2291.54, -421.539 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+
+[node name="few light" type="Sprite" parent="YSort"]
+position = Vector2( 1890, -396.923 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 15 )
+
+[node name="small light" type="Sprite" parent="YSort"]
+position = Vector2( 1782.31, -347.692 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 20 )
+
+[node name="small light3" type="Sprite" parent="YSort"]
+position = Vector2( 1694.62, -347.692 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 20 )
+
+[node name="small light2" type="Sprite" parent="YSort"]
+position = Vector2( 2156.15, -352.308 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 20 )
+
+[node name="Sprite7" type="Sprite" parent="YSort"]
+position = Vector2( 3934.62, -620 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 16 )
+
+[node name="Sprite6" type="Sprite" parent="YSort"]
+position = Vector2( 3826.27, -437.579 )
+rotation = -0.00691364
+scale = Vector2( 3.56074, 3.56074 )
+texture = ExtResource( 19 )
+
+[node name="Sprite9" type="Sprite" parent="YSort"]
+position = Vector2( 4032.42, -437.579 )
+rotation = -0.00691364
+scale = Vector2( 3.56074, 3.56074 )
+texture = ExtResource( 19 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort"]
+position = Vector2( 1646.92, -427.692 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/StaticBody2D"]
+position = Vector2( -0.866333, -15.3481 )
+polygon = PoolVector2Array( -37.0282, 21.9788, 174.409, 26.9236, 206.577, -5.10632, -49.757, 13.6066 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="YSort/StaticBody2D"]
+polygon = PoolVector2Array( 449.42, 79.0782, 460.846, 78.1598, 464.679, 84.9873, 472.115, 89.0093, 463.519, 91.7486, 464.071, 103.883, 456.25, 101.995, 455.298, 93.0662, 451.361, 94.084, 452.54, 85.8963 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="YSort/StaticBody2D"]
+position = Vector2( 129.756, 5.28793 )
+polygon = PoolVector2Array( 449.42, 79.0782, 460.846, 78.1598, 464.679, 84.9873, 472.115, 89.0093, 463.519, 91.7486, 464.071, 103.883, 456.25, 101.995, 455.298, 93.0662, 451.361, 94.084, 452.54, 85.8963 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="YSort/StaticBody2D"]
+position = Vector2( 70.3146, -111.417 )
+polygon = PoolVector2Array( 449.42, 79.0782, 469.109, 73.6327, 477.868, 85.5189, 487.73, 94.923, 489.647, 111.712, 489.196, 118.839, 454.11, 101.967, 427.119, 120.156, 436.688, 97.8126, 436.393, 93.1721, 439.027, 82.8637 )
+
+[node name="Sprite14" type="Sprite" parent="YSort"]
+position = Vector2( 17.6927, -966.154 )
+rotation = -0.00691365
+scale = Vector2( 3.56074, 3.56074 )
+texture = ExtResource( 24 )
+
+[node name="Sprite16" type="Sprite" parent="YSort"]
+position = Vector2( 365.385, -984.615 )
+rotation = -0.00691365
+scale = Vector2( 3.56074, 3.56074 )
+texture = ExtResource( 24 )
+
+[node name="Sprite17" type="Sprite" parent="YSort"]
+position = Vector2( -294.615, -836.923 )
+rotation = -0.00691365
+scale = Vector2( 3.56074, 3.56074 )
+texture = ExtResource( 30 )
+
+[node name="Sprite18" type="Sprite" parent="YSort"]
+position = Vector2( -160.769, -712.308 )
+rotation = -0.00691365
+scale = Vector2( 3.56074, 3.56074 )
+texture = ExtResource( 30 )
+
+[node name="Sprite19" type="Sprite" parent="YSort"]
+position = Vector2( -394.615, -709.231 )
+rotation = -0.00691365
+scale = Vector2( 3.56074, 3.56074 )
+texture = ExtResource( 30 )
+
+[node name="Sprite20" type="Sprite" parent="YSort"]
+position = Vector2( 550, -858.462 )
+rotation = -0.00691365
+scale = Vector2( 3.56074, 3.56074 )
+texture = ExtResource( 30 )
+
+[node name="Sprite21" type="Sprite" parent="YSort"]
+position = Vector2( 757.693, -869.231 )
+rotation = -0.00691365
+scale = Vector2( 3.56074, 3.56074 )
+texture = ExtResource( 30 )
+
+[node name="Sprite22" type="Sprite" parent="YSort"]
+position = Vector2( 162.308, -690.769 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 22 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Sprite22"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Sprite22/StaticBody2D"]
+polygon = PoolVector2Array( -142.288, 25.2191, -149.986, 94.6669, -93.2761, 94.7058, -109.507, 54.5439, -71.2952, 24.0209, 3.28221, 21.4435, 62.0679, -0.603338, 68.8954, -4.4361, 68.291, -12.6474, 8.19241, 0.821986 )
+
+[node name="Sprite23" type="Sprite" parent="YSort"]
+position = Vector2( 654.615, -746.154 )
+rotation = -0.0132645
+scale = Vector2( 4.99207, 4.99207 )
+texture = ExtResource( 25 )
+
+[node name="Sprite24" type="Sprite" parent="YSort"]
+position = Vector2( 683.85, -330.771 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite25" type="Sprite" parent="YSort"]
+position = Vector2( 579.231, -326.165 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite26" type="Sprite" parent="YSort"]
+position = Vector2( 480.769, -327.703 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite27" type="Sprite" parent="YSort"]
+position = Vector2( 380.769, -330.78 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite28" type="Sprite" parent="YSort"]
+position = Vector2( 270, -327.705 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite29" type="Sprite" parent="YSort"]
+position = Vector2( 168.461, -332.319 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite30" type="Sprite" parent="YSort"]
+position = Vector2( 902.718, 83.9755 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite31" type="Sprite" parent="YSort"]
+position = Vector2( 798.099, 88.5804 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite32" type="Sprite" parent="YSort"]
+position = Vector2( 699.637, 87.0427 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite33" type="Sprite" parent="YSort"]
+position = Vector2( 599.637, 83.9656 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite34" type="Sprite" parent="YSort"]
+position = Vector2( 488.868, 87.0414 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite35" type="Sprite" parent="YSort"]
+position = Vector2( 387.329, 82.4271 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite36" type="Sprite" parent="YSort"]
+position = Vector2( 296.154, 84.6053 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Sprite36"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Sprite36/StaticBody2D"]
+position = Vector2( -1.22424, -21.2354 )
+scale = Vector2( 0.997129, 0.768387 )
+polygon = PoolVector2Array( 301.746, 34.3609, -55.3359, 34.8907, -61.9209, 21.1586, 318.401, 25.4877 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="YSort/Sprite36/StaticBody2D"]
+position = Vector2( -2.88477, -228.198 )
+scale = Vector2( 0.997129, 0.768387 )
+polygon = PoolVector2Array( 207.643, 30.2477, -62.2266, 27.5364, -61.9209, 21.1586, 206.939, 25.3031 )
+
+[node name="Sprite37" type="Sprite" parent="YSort"]
+position = Vector2( 191.538, 83.0655 )
+rotation = -0.0132645
+scale = Vector2( 2.04672, 2.02982 )
+texture = ExtResource( 27 )
+
+[node name="Sprite38" type="Sprite" parent="YSort"]
+position = Vector2( -379.229, 549.207 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 28 )
+
+[node name="Sprite39" type="Sprite" parent="YSort"]
+position = Vector2( -257.692, 549.245 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 28 )
+
+[node name="Sprite40" type="Sprite" parent="YSort"]
+position = Vector2( -91.5379, 549.249 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 28 )
+
+[node name="Sprite41" type="Sprite" parent="YSort"]
+position = Vector2( 36.1553, 560.014 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 28 )
+
+[node name="Sprite42" type="Sprite" parent="YSort"]
+position = Vector2( 219.23, 553.866 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 28 )
+
+[node name="Sprite43" type="Sprite" parent="YSort"]
+position = Vector2( 402.308, 556.943 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 28 )
+
+[node name="Sprite44" type="Sprite" parent="YSort"]
+position = Vector2( 568.463, 567.711 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 28 )
+
+[node name="Sprite45" type="Sprite" parent="YSort"]
+position = Vector2( 713.076, 553.862 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 28 )
+
+[node name="Sprite46" type="Sprite" parent="YSort"]
+position = Vector2( 713.076, 553.862 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 28 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Sprite46"]
+position = Vector2( -148.296, -2.62102 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Sprite46/StaticBody2D"]
+polygon = PoolVector2Array( -8.14549, 15.6936, 156.667, 17.4768, 156.144, 25.4747, -12.25, 25.9609 )
+
+[node name="Sprite47" type="Sprite" parent="YSort"]
+position = Vector2( 4259.22, 292.308 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite48" type="Sprite" parent="YSort"]
+position = Vector2( 4190.01, 390.762 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite49" type="Sprite" parent="YSort"]
+position = Vector2( 4190.01, 390.762 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite50" type="Sprite" parent="YSort"]
+position = Vector2( 4303.85, 441.551 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite51" type="Sprite" parent="YSort"]
+position = Vector2( 4197.7, 536.911 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite52" type="Sprite" parent="YSort"]
+position = Vector2( 4259.24, 584.622 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite53" type="Sprite" parent="YSort"]
+position = Vector2( 3966.91, 484.587 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite54" type="Sprite" parent="YSort"]
+position = Vector2( 4022.31, 583.054 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite55" type="Sprite" parent="YSort"]
+position = Vector2( 3868.46, 583.06 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite56" type="Sprite" parent="YSort"]
+position = Vector2( 3751.54, 583.064 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite57" type="Sprite" parent="YSort"]
+position = Vector2( 3560.77, 590.748 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite58" type="Sprite" parent="YSort"]
+position = Vector2( 3560.77, 590.748 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="Sprite59" type="Sprite" parent="YSort"]
+position = Vector2( 3560.77, 590.748 )
+rotation = -0.0132645
+scale = Vector2( 7.36463, 7.3038 )
+texture = ExtResource( 26 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Sprite59"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Sprite59/StaticBody2D"]
+polygon = PoolVector2Array( -12.0754, 12.6914, 21.8187, 8.93164, 43.5977, 5.00981, 62.4468, 1.47009, 81.7802, -7.1189, 102.002, -51.5077, 104.733, -36.7252, 103.171, 18.4461, -12.1751, 20.2738 )
+
+[node name="Many light" type="Sprite" parent="YSort"]
+position = Vector2( 1728.46, 1070.77 )
+rotation = -0.0132645
+scale = Vector2( 4.31383, 4.31383 )
+texture = ExtResource( 14 )
+offset = Vector2( 0, -120 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
 
-[node name="Torch" parent="." instance=ExtResource( 8 )]
-position = Vector2( 615, 70 )
-scale = Vector2( 0.3, 0.3 )
+[node name="CigarSmoke" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2824, 285 )
+scale = Vector2( 1.24891, 1.24891 )
 
+[node name="Torch" parent="." instance=ExtResource( 8 )]
+position = Vector2( 703, 107 )
+scale = Vector2( 0.511854, 0.511854 )
+
+[connection signal="body_entered" from="YSort/Kapre" to="YSort/Kapre" method="_on_Kapre_body_entered"]
+[connection signal="body_exited" from="YSort/Kapre" to="YSort/Kapre" method="_on_Kapre_body_exited"]
 [connection signal="body_entered" from="CigarSmoke" to="CigarSmoke" method="_on_CigarSmoke_body_entered"]
-[connection signal="body_entered" from="Kapre" to="Kapre" method="_on_Kapre_body_entered"]
-[connection signal="body_exited" from="Kapre" to="Kapre" method="_on_Kapre_body_exited"]
 [connection signal="body_entered" from="Torch" to="Torch" method="_on_Torch_body_entered"]

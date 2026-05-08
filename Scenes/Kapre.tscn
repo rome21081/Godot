@@ -52,8 +52,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=10]
-radius = 24.0
-height = 28.0
+height = 46.0
 
 [node name="Kapre" type="Area2D"]
 script = ExtResource( 2 )
@@ -65,5 +64,5 @@ playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -6, 0 )
+position = Vector2( -3, 1 )
 shape = SubResource( 10 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=2]
@@ -24,6 +24,9 @@
 [ext_resource path="res://Scenes/Houses/housee6.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/Houses/house 3.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Scenes/Houses/boneess.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Houses/houuseeee2.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Trees/Tree 1.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Trees/tree 2.tscn" type="PackedScene" id=27]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 65, -54 )
@@ -70,6 +73,20 @@ polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.5
 position = Vector2( 572, 162 )
 scale = Vector2( 0.584004, 0.584004 )
 
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -589.037, 640.406 )
+scale = Vector2( 1.71232, 1.71232 )
+
+[node name="Camera2D2" type="Camera2D" parent="YSort/Player"]
+position = Vector2( 7.99994, -14.9996 )
+current = true
+limit_left = 65
+limit_top = -250
+limit_right = 5100
+limit_bottom = 2000
+smoothing_enabled = true
+editor_draw_screen = false
+
 [node name="NPC" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( -518.832, 1128.42 )
 scale = Vector2( 1.63995, 1.63995 )
@@ -78,26 +95,12 @@ script = ExtResource( 3 )
 [node name="UI" parent="YSort" instance=ExtResource( 7 )]
 
 [node name="Babaylan" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 6987.96, 200.341 )
+position = Vector2( 6381.8, 162.67 )
 scale = Vector2( 1.22515, 1.22515 )
 
 [node name="Symbol" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 3599.29, 1446.91 )
 scale = Vector2( 1.23425, 1.23425 )
-
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -589.037, 640.406 )
-scale = Vector2( 1.71232, 1.71232 )
-
-[node name="Camera2D2" type="Camera2D" parent="YSort/Player"]
-position = Vector2( 5, -10 )
-current = true
-limit_left = 65
-limit_top = -250
-limit_right = 5000
-limit_bottom = 2000
-smoothing_enabled = true
-editor_draw_screen = false
 
 [node name="boneess" parent="YSort" instance=ExtResource( 24 )]
 position = Vector2( 3063.33, 1614.71 )
@@ -287,6 +290,170 @@ scale = Vector2( 1.71232, 1.71232 )
 [node name="house 4" parent="YSort" instance=ExtResource( 23 )]
 position = Vector2( 633.557, 200.341 )
 scale = Vector2( 0.794103, 0.794103 )
+
+[node name="houuseeee2" parent="YSort" instance=ExtResource( 25 )]
+position = Vector2( 6761.94, 27.3971 )
+scale = Vector2( 0.95258, 0.95258 )
+
+[node name="Tree 1" parent="YSort" instance=ExtResource( 26 )]
+position = Vector2( 7453.59, -22.3818 )
+scale = Vector2( 17.7876, 17.7876 )
+
+[node name="Tree 2" parent="YSort" instance=ExtResource( 26 )]
+position = Vector2( 7477.57, 489.601 )
+scale = Vector2( 11.9653, 11.9653 )
+
+[node name="Tree 3" parent="YSort" instance=ExtResource( 26 )]
+position = Vector2( 7511.81, 910.831 )
+scale = Vector2( 11.4987, 11.4987 )
+
+[node name="Tree 4" parent="YSort" instance=ExtResource( 26 )]
+position = Vector2( 7494.69, 1388.57 )
+scale = Vector2( 11.4987, 11.4987 )
+
+[node name="Tree 5" parent="YSort" instance=ExtResource( 26 )]
+position = Vector2( 7511.81, 1883.43 )
+scale = Vector2( 11.4987, 11.4987 )
+
+[node name="Tree 6" parent="YSort" instance=ExtResource( 26 )]
+position = Vector2( 7540.92, 2241.3 )
+scale = Vector2( 11.4987, 11.4987 )
+
+[node name="Tree 7" parent="YSort" instance=ExtResource( 26 )]
+position = Vector2( 7552.91, 2616.3 )
+scale = Vector2( 11.4987, 11.4987 )
+
+[node name="Tree 8" parent="YSort" instance=ExtResource( 26 )]
+position = Vector2( 7547.77, 2835.48 )
+scale = Vector2( 11.4987, 11.4987 )
+
+[node name="tree 12" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5058.18, 1782.52 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 2" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 4957.16, -123.287 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 3" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5365.92, -116.924 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 4" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5708.38, -116.923 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 5" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6037.14, -123.773 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 6" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5030.3, 187.869 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 7" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5029.08, 486.298 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 8" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5041.06, 779.104 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 9" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5059.9, 974.308 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 10" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5071.88, 1176.36 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 11" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5053.05, 1479.44 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 13" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5083.87, 2374.98 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 22" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5094.14, 2587.31 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 19" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5083.87, 2708.89 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 21" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5073.6, 2897.24 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 14" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5070.17, 3078.75 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 15" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5676.33, 749.995 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 18" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5904.07, 746.57 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 16" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6220.85, 743.146 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 25" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6109.55, 904.103 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 27" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6109.55, 904.103 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 28" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6136.94, 1011.98 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 29" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6164.34, 1268.83 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 30" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6186.6, 1515.4 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 31" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6205.44, 1748.28 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 32" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6224.27, 2078.75 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 33" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6251.67, 2325.33 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 34" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6251.67, 2553.06 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 17" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6558.79, 750.238 )
+scale = Vector2( 9.81148, 9.73121 )
+
+[node name="tree 20" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 6243.11, 2726.01 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="tree 23" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( 5404.07, 743.146 )
+scale = Vector2( 9.72362, 9.72362 )
+
+[node name="Tree 9" parent="YSort" instance=ExtResource( 26 )]
+position = Vector2( 7520.5, 3184.91 )
+scale = Vector2( 11.4987, 11.4987 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.258824, 0.258824, 0.258824, 1 )
