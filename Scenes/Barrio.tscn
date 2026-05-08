@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/SFX/Jungle.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Scripts/chapter2.gd" type="Script" id=3]
+[ext_resource path="res://Images/green_bg2.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Fade.tscn" type="PackedScene" id=12]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 65, -54 )
+script = ExtResource( 3 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.121569, 0.113725, 0.113725, 1 )
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="background"]
+margin_left = 1536.0
+margin_right = 3072.0
+margin_bottom = 1024.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/StaticBody2D"]
+polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.57, 3065.26, 1099.03, -62.8719, 1112.48, -62.8719, -128.683, 3193.08, -101.774, 3176.26, 1102.39, 3074.03, 1002.9, 3075.35, 9.22449 )
+
+[node name="UI" parent="." instance=ExtResource( 7 )]
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource( 1 )]
+position = Vector2( 272.5, 539 )
+scale = Vector2( 0.65, 0.65 )
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2( -1, 0 )
+current = true
+zoom = Vector2( 0.65, 0.65 )
+limit_left = 65
+limit_top = -55
+limit_right = 3137
+limit_bottom = 969
+smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 12 )]
+visible = false

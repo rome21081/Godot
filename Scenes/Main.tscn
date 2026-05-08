@@ -70,20 +70,6 @@ polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.5
 position = Vector2( 572, 162 )
 scale = Vector2( 0.584004, 0.584004 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -589.037, 640.406 )
-scale = Vector2( 1.71232, 1.71232 )
-
-[node name="Camera2D2" type="Camera2D" parent="YSort/Player"]
-position = Vector2( 5, -10 )
-current = true
-limit_left = 65
-limit_top = -250
-limit_right = 5000
-limit_bottom = 2000
-smoothing_enabled = true
-editor_draw_screen = false
-
 [node name="NPC" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( -518.832, 1128.42 )
 scale = Vector2( 1.63995, 1.63995 )
@@ -98,6 +84,20 @@ scale = Vector2( 1.22515, 1.22515 )
 [node name="Symbol" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 3599.29, 1446.91 )
 scale = Vector2( 1.23425, 1.23425 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -589.037, 640.406 )
+scale = Vector2( 1.71232, 1.71232 )
+
+[node name="Camera2D2" type="Camera2D" parent="YSort/Player"]
+position = Vector2( 5, -10 )
+current = true
+limit_left = 65
+limit_top = -250
+limit_right = 5000
+limit_bottom = 2000
+smoothing_enabled = true
+editor_draw_screen = false
 
 [node name="boneess" parent="YSort" instance=ExtResource( 24 )]
 position = Vector2( 3063.33, 1614.71 )
@@ -261,11 +261,9 @@ scale = Vector2( 0.787149, 0.787149 )
 
 [node name="house 5" parent="YSort" instance=ExtResource( 18 )]
 position = Vector2( -256.848, 977.732 )
-scale = Vector2( 1, 1 )
 
 [node name="houseee9" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( 2174.64, -311.642 )
-scale = Vector2( 1, 1 )
 
 [node name="watch guard" parent="YSort" instance=ExtResource( 19 )]
 position = Vector2( -926.363, 202.053 )
@@ -273,7 +271,6 @@ scale = Vector2( 0.819706, 0.819706 )
 
 [node name="houseee10" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( 3075.32, 2883.54 )
-scale = Vector2( 1, 1 )
 
 [node name="House 1" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( -97.6022, 10.2739 )
