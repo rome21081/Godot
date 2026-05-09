@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/SFX/Jungle.mp3" type="AudioStream" id=2]
@@ -10,7 +10,17 @@
 [ext_resource path="res://Scenes/suspect2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/suspect1.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/suspect3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Images/fishhshop.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Fade.tscn" type="PackedScene" id=12]
+[ext_resource path="res://tikbalang/tree.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Images/vegiee shop.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Houses/house 5.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Houses/house 2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Houses/house 4.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Images/light.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Rocks/Oval_leaf_tree2.png" type="Texture" id=19]
+[ext_resource path="res://Images/chair.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/Trees/towntree.tscn" type="PackedScene" id=21]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 45.8302
@@ -48,57 +58,70 @@ polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.5
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
 
-[node name="houuseeee2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1078, 52.0001 )
-scale = Vector2( 0.81068, 0.720741 )
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( 1839, -22 )
+scale = Vector2( 0.559438, 0.559438 )
 
-[node name="House" type="Area2D" parent="houuseeee2"]
+[node name="fish shop2" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -1732.1, 403.977 )
+scale = Vector2( 0.665772, 0.59191 )
+texture = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="houuseeee2/House"]
-position = Vector2( -85.1138, 241.418 )
-shape = SubResource( 2 )
+[node name="StaticBody2D3" type="StaticBody2D" parent="YSort/fish shop2"]
+position = Vector2( 24.1638, -39.2587 )
+scale = Vector2( 1.17439, 1.17439 )
 
-[node name="houuseeee3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2853, 466 )
-scale = Vector2( 0.81068, 0.720741 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/fish shop2/StaticBody2D3"]
+polygon = PoolVector2Array( -262.91, 64.2866, -276.627, 318.861, -102.878, 329.147, -132.598, 228.86, -173.749, 38.5719, 208.042, 79.7153, 217.187, 246.86, 260.625, 231.432, 258.338, 43.7149, -180.608, -2.57146 )
 
-[node name="House2" type="Area2D" parent="houuseeee3"]
+[node name="fish shop" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -1226.23, 137.638 )
+scale = Vector2( 0.781877, 0.695133 )
+texture = ExtResource( 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="houuseeee3/House2"]
-position = Vector2( -85.1138, 241.418 )
-shape = SubResource( 2 )
+[node name="StaticBody2D2" type="StaticBody2D" parent="YSort/fish shop"]
 
-[node name="hall" parent="." instance=ExtResource( 5 )]
-position = Vector2( 629, 71 )
-scale = Vector2( 0.8, 0.8 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/fish shop/StaticBody2D2"]
+polygon = PoolVector2Array( -262.91, 64.2866, -276.627, 318.861, -102.878, 329.147, -132.598, 228.86, -173.749, 38.5719, 208.042, 79.7153, 217.187, 246.86, 260.625, 231.432, 258.338, 43.7149, -180.608, -2.57146 )
 
-[node name="Area2D" type="Area2D" parent="hall"]
+[node name="suspect1" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -2559.71, 1192.27 )
+scale = Vector2( 1.20959, 1.20959 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hall/Area2D"]
-position = Vector2( 0, 201.25 )
-shape = SubResource( 1 )
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/suspect1"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
-autoplay = true
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/suspect1/StaticBody2D"]
+polygon = PoolVector2Array( -33.9891, 8.86658, -32.5113, -47.2893, -33.9891, -85.7117, -19.2112, -115.267, 7.38892, -94.5784, 16.2556, -48.7671, 25.1223, 16.2555, 14.7778, 29.5555 )
 
-[node name="CanvasLayer" parent="." instance=ExtResource( 12 )]
-visible = false
+[node name="suspect3" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( -1951.96, 584.515 )
+scale = Vector2( 1.12148, 1.12148 )
 
-[node name="suspect1" parent="." instance=ExtResource( 9 )]
-position = Vector2( 121, 891 )
+[node name="StaticBody2D2" type="StaticBody2D" parent="YSort/suspect3"]
+position = Vector2( -511.636, 549.889 )
+scale = Vector2( 1.07856, 1.07856 )
 
-[node name="suspect2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 475, 884 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/suspect3/StaticBody2D2"]
+position = Vector2( 480.28, -490.625 )
+polygon = PoolVector2Array( -50.2446, -14.7778, -51.7224, -38.4224, -50.2446, -53.2003, -19.2112, -124.134, 0, -110.834, 16.2556, -48.7671, 26.6002, -10.3445, -7.38892, -17.7334 )
 
-[node name="suspect3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 905, 813 )
+[node name="suspect2" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -958.105, 291.364 )
+scale = Vector2( 0.984029, 0.984029 )
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource( 1 )]
-position = Vector2( 272.5, 539 )
-scale = Vector2( 0.65, 0.65 )
+[node name="StaticBody2D3" type="StaticBody2D" parent="YSort/suspect2"]
+position = Vector2( -568.571, 673.929 )
+scale = Vector2( 1.22922, 1.22922 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/suspect2/StaticBody2D3"]
+position = Vector2( 472.891, -517.225 )
+polygon = PoolVector2Array( -33.9891, 8.86658, -32.5113, -47.2893, -33.9891, -85.7117, -19.2112, -115.267, 7.38892, -94.5784, 16.2556, -48.7671, 25.1223, 16.2555, 14.7778, 29.5555 )
+
+[node name="Player" parent="YSort" groups=["player"] instance=ExtResource( 1 )]
+position = Vector2( -2800.13, 1002.79 )
+scale = Vector2( 1.16188, 1.16188 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
 position = Vector2( 2.30768, 3.0769 )
 current = true
 zoom = Vector2( 0.65, 0.65 )
@@ -109,9 +132,311 @@ limit_bottom = 969
 smoothing_enabled = true
 editor_draw_limits = true
 
-[connection signal="body_entered" from="houuseeee2/House" to="Player" method="_on_House1_body_entered"]
-[connection signal="body_entered" from="houuseeee3/House2" to="Player" method="_on_House2_body_entered"]
-[connection signal="body_entered" from="hall/Area2D" to="Player" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="suspect1" to="suspect1" method="_on_suspect1_body_entered"]
-[connection signal="body_entered" from="suspect2" to="suspect2" method="_on_suspect2_body_entered"]
-[connection signal="body_entered" from="suspect3" to="suspect3" method="_on_suspect3_body_entered"]
+[node name="house 10" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( -1399.62, 1623.06 )
+scale = Vector2( 0.798502, 0.798502 )
+
+[node name="house 11" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 1648.08, -51.8377 )
+
+[node name="house 12" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 1136.86, -57.2003 )
+
+[node name="house 5" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 0, 0 )
+
+[node name="house 7" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -3117.41, -75.0753 )
+
+[node name="house 2" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( -3151.38, 1226.23 )
+
+[node name="house 3" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( -2711.65, 1635.57 )
+
+[node name="house 4" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( -2327.34, 1295.94 )
+
+[node name="house 9" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( -1892.97, 1619.48 )
+
+[node name="house 8" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -2591.89, -73.2878 )
+
+[node name="house 6" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -557.703, -10.7251 )
+
+[node name="houuseeee2" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 386.102, 305.664 )
+scale = Vector2( 0.983676, 0.874544 )
+
+[node name="House" type="Area2D" parent="YSort/houuseeee2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/houuseeee2/House"]
+position = Vector2( -85.1138, 241.418 )
+shape = SubResource( 2 )
+
+[node name="hall" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -209.138, 638.141 )
+scale = Vector2( 1.00688, 0.999849 )
+
+[node name="Area2D" type="Area2D" parent="YSort/hall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/hall/Area2D"]
+position = Vector2( 0, 201.25 )
+shape = SubResource( 1 )
+
+[node name="tree" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 282.427, 182.326 )
+scale = Vector2( 5.53554, 4.99991 )
+
+[node name="tree7" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( -4318.62, 400.402 )
+scale = Vector2( 5.53554, 4.99991 )
+
+[node name="tree8" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( -3610.77, -1930.51 )
+scale = Vector2( 7.34283, 7.10462 )
+
+[node name="tree2" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 952.743, -1185.12 )
+scale = Vector2( 5.53554, 4.99991 )
+
+[node name="tree4" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 952.742, -861.579 )
+scale = Vector2( 5.53554, 4.99991 )
+
+[node name="tree5" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 981.343, -509.44 )
+scale = Vector2( 5.53554, 4.99991 )
+
+[node name="tree6" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 963.467, -185.901 )
+scale = Vector2( 5.53554, 4.99991 )
+
+[node name="tree3" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 1015.31, 182.326 )
+scale = Vector2( 5.53554, 4.99991 )
+
+[node name="light" type="Sprite" parent="YSort"]
+position = Vector2( -516.59, 681.041 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -69.3955, 255.198, 15.6704, 257.436, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="light3" type="Sprite" parent="YSort"]
+position = Vector2( -2134.29, 511.227 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light3/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -69.3959, 246.243, 24.6243, 252.959, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="light4" type="Sprite" parent="YSort"]
+position = Vector2( -2395.26, 62.5628 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light4/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -33.5784, -118.644, -22.3855, -120.883, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="light5" type="Sprite" parent="YSort"]
+position = Vector2( -2797.45, 1197.63 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light5/StaticBody2D"]
+polygon = PoolVector2Array( -42.5329, 98.4974, -71.6344, 259.675, 22.3858, 252.959, -22.3857, 67.1573, -40.2942, 152.223 )
+
+[node name="light6" type="Sprite" parent="YSort"]
+position = Vector2( -2264.77, 1497.93 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light6"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light6/StaticBody2D"]
+polygon = PoolVector2Array( -38.0558, 116.406, -62.6801, 255.198, 4.47717, 250.721, -22.3857, 132.076, -40.2942, 152.223 )
+
+[node name="light7" type="Sprite" parent="YSort"]
+position = Vector2( 822.254, 135.851 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light7"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light7/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -33.5784, -118.644, -22.3855, -120.883, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="tree18" type="Sprite" parent="YSort"]
+position = Vector2( 570.216, -84.0129 )
+scale = Vector2( 11.0038, 11.0038 )
+texture = ExtResource( 19 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/tree18"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/tree18/StaticBody2D"]
+scale = Vector2( -0.394619, 0.0924641 )
+polygon = PoolVector2Array( -33.3436, 45.678, -22.6407, -122.979, 30.8738, -128.25, 33.7554, 45.678, 20.5825, 110.681, -2.46985, 108.925 )
+
+[node name="light13" type="Sprite" parent="YSort"]
+position = Vector2( -806.166, 668.528 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light13"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light13/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -73.873, 257.436, 13.4314, 255.198, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="light16" type="Sprite" parent="YSort"]
+position = Vector2( -883.029, 1281.64 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light16"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light16/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -73.873, 257.436, 13.4314, 255.198, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="light17" type="Sprite" parent="YSort"]
+position = Vector2( -484.415, 1281.64 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light17"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light17/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -73.873, 257.436, 13.4314, 255.198, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="light18" type="Sprite" parent="YSort"]
+position = Vector2( -94.7378, 1281.64 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light18"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light18/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -73.873, 257.436, 13.4314, 255.198, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="light19" type="Sprite" parent="YSort"]
+position = Vector2( 282.427, 1281.64 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light19"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light19/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -73.873, 257.436, 13.4314, 255.198, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="light21" type="Sprite" parent="YSort"]
+position = Vector2( 673.891, 618.478 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light21"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light21/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -73.873, 257.436, 13.4314, 255.198, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="light22" type="Sprite" parent="YSort"]
+position = Vector2( 132.276, 681.041 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light22"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light22/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -73.873, 257.436, 13.4314, 255.198, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="light14" type="Sprite" parent="YSort"]
+position = Vector2( -806.166, 196.626 )
+scale = Vector2( 0.798502, 0.798502 )
+texture = ExtResource( 18 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/light14"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/light14/StaticBody2D"]
+polygon = PoolVector2Array( -33.5784, 136.553, -60.4417, 268.629, 13.4314, 248.482, -15.6699, 149.985, -40.2942, 152.223 )
+
+[node name="chair" type="Sprite" parent="YSort"]
+position = Vector2( -702.491, 1392.47 )
+scale = Vector2( 0.368284, 0.368284 )
+texture = ExtResource( 20 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/chair"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/chair/StaticBody2D"]
+polygon = PoolVector2Array( -339.753, 145.609, 349.46, 135.902, 334.899, -9.70703, 310.632, -4.85376, -334.899, 9.70728 )
+
+[node name="chair2" type="Sprite" parent="YSort"]
+position = Vector2( 69.7131, 1392.47 )
+scale = Vector2( 0.368284, 0.368284 )
+texture = ExtResource( 20 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/chair2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/chair2/StaticBody2D"]
+polygon = PoolVector2Array( -339.753, 145.609, 349.46, 135.902, 334.899, -9.70703, 315.485, 14.5608, -291.217, 9.70728 )
+
+[node name="houuseeee3" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 1887.61, 1392.47 )
+scale = Vector2( 0.970981, 0.863258 )
+
+[node name="House2" type="Area2D" parent="YSort/houuseeee3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/houuseeee3/House2"]
+position = Vector2( -85.1138, 241.418 )
+shape = SubResource( 2 )
+
+[node name="tree21" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( -1644.51, 1412.13 )
+scale = Vector2( 11.0038, 11.0038 )
+
+[node name="tree24" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( 1136.86, 1433.58 )
+scale = Vector2( 11.0038, 11.0038 )
+
+[node name="tree25" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( 899.117, 1433.58 )
+scale = Vector2( 11.0038, 11.0038 )
+
+[node name="tree26" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( 1410.34, 949.167 )
+scale = Vector2( 11.0038, 11.0038 )
+
+[node name="tree27" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( 1410.34, 475.477 )
+scale = Vector2( 11.0038, 11.0038 )
+
+[node name="tree22" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( -3151.38, 464.752 )
+scale = Vector2( 11.0038, 11.0038 )
+
+[node name="tree23" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( -2520.39, 477.265 )
+scale = Vector2( 11.0038, 11.0038 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[connection signal="body_entered" from="YSort/suspect1" to="YSort/suspect1" method="_on_suspect1_body_entered"]
+[connection signal="body_entered" from="YSort/suspect3" to="YSort/suspect3" method="_on_suspect3_body_entered"]
+[connection signal="body_entered" from="YSort/suspect2" to="YSort/suspect2" method="_on_suspect2_body_entered"]
+[connection signal="body_entered" from="YSort/houuseeee2/House" to="YSort/Player" method="_on_House1_body_entered"]
+[connection signal="body_entered" from="YSort/hall/Area2D" to="YSort/Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="YSort/houuseeee3/House2" to="YSort/Player" method="_on_House2_body_entered"]

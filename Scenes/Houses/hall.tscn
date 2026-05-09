@@ -11,4 +11,4 @@ script = ExtResource( 2 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -258, 149, 255, 144, 250, -32, 273, -29, 281, -204, 225, -255, 123, -258, 78, -204, 38, -176, 24, -213, -27, -210, -24, -190, -67, -193, -95, -244, -183, -255, -268, -227, -268, -185, -282, -43, -259, -23 )
+polygon = PoolVector2Array( -258, 149, 255, 144, 250, -32, 273, -29, 137, -43, -120, -15, -166, -29, -191, -46, -282, -43, -259, -23 )

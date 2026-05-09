@@ -313,41 +313,18 @@ tile_data = PoolIntArray( 65537, 0, 0, 65544, 0, 0, 131096, 0, 0, 196623, 0, 0, 
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
 
-[node name="Tikbalang" parent="." instance=ExtResource( 6 )]
-position = Vector2( 409, 86 )
-
 [node name="Hair" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2860, 533 )
 
-[node name="tree" parent="." instance=ExtResource( 15 )]
+[node name="YSort" type="YSort" parent="."]
 position = Vector2( -204, -387 )
 scale = Vector2( 2, 2 )
 
-[node name="tree2" parent="." instance=ExtResource( 15 )]
-position = Vector2( 126, -258 )
-scale = Vector2( 2, 2 )
+[node name="Player" parent="YSort" groups=["player"] instance=ExtResource( 1 )]
+position = Vector2( 238.25, 463 )
+scale = Vector2( 0.325, 0.325 )
 
-[node name="tree3" parent="." instance=ExtResource( 15 )]
-position = Vector2( -320, 265 )
-scale = Vector2( 2, 2 )
-
-[node name="tree4" parent="." instance=ExtResource( 15 )]
-position = Vector2( -43, 400 )
-scale = Vector2( 2, 2 )
-
-[node name="tree5" parent="." instance=ExtResource( 15 )]
-position = Vector2( 113, 171 )
-scale = Vector2( 2, 2 )
-
-[node name="tree6" parent="." instance=ExtResource( 15 )]
-position = Vector2( -315, -163 )
-scale = Vector2( 2, 2 )
-
-[node name="Player" parent="." groups=["player"] instance=ExtResource( 1 )]
-position = Vector2( 272.5, 539 )
-scale = Vector2( 0.65, 0.65 )
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="YSort/Player"]
 position = Vector2( -1, 0 )
 current = true
 zoom = Vector2( 0.65, 0.65 )
@@ -357,6 +334,62 @@ limit_right = 3137
 limit_bottom = 969
 smoothing_enabled = true
 editor_draw_limits = true
+
+[node name="tree" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 239, 158.5 )
+scale = Vector2( 2.12036, 2.12036 )
+
+[node name="tree8" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 182.5, 215 )
+scale = Vector2( 2.12036, 2.12036 )
+
+[node name="tree2" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 373.5, 625 )
+scale = Vector2( 2.16977, 2.16977 )
+
+[node name="tree9" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 153, 520 )
+scale = Vector2( 2.16977, 2.16977 )
+
+[node name="tree10" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 270.5, 577 )
+scale = Vector2( 2.16977, 2.16977 )
+
+[node name="tree11" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 270.5, 577 )
+scale = Vector2( 2.16977, 2.16977 )
+
+[node name="tree12" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 386.5, 484.5 )
+scale = Vector2( 1.79353, 1.8109 )
+
+[node name="tree13" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 138.5, 387.5 )
+scale = Vector2( 1.79353, 1.8109 )
+
+[node name="tree7" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 223, 677 )
+scale = Vector2( 1.51496, 1.51496 )
+
+[node name="tree3" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 135.5, 312 )
+scale = Vector2( 1.71659, 1.71659 )
+
+[node name="tree4" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 125.5, 638.5 )
+scale = Vector2( 1.41012, 1.41012 )
+
+[node name="tree5" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 277, 324 )
+scale = Vector2( 1.80123, 1.80123 )
+
+[node name="Tikbalang" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 381, 323.5 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="tree6" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 366, 211 )
+scale = Vector2( 1.64936, 1.64936 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
@@ -511,9 +544,9 @@ tile_set = SubResource( 5 )
 format = 1
 tile_data = PoolIntArray( 10, 2, 0, 11, 2, 0, 12, 2, 0, 13, 2, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 2, 0, 21, 3, 0, 22, 1, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 1, 0, 28, 0, 0, 29, 2, 0, 30, 2, 0, 31, 2, 0, 32, 2, 0, 33, 0, 0, 34, 0, 0, 35, 2, 0, 36, 1, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 1, 0, 42, 1, 0, 43, 1, 0, 44, 1, 0, 45, 0, 0, 46, 1, 0, 47, 0, 0, 65546, 2, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 0, 0, 65556, 3, 0, 65557, 3, 0, 65558, 2, 0, 65559, 1, 0, 65560, 1, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 2, 0, 65565, 2, 0, 65566, 2, 0, 65567, 2, 0, 65568, 2, 0, 65569, 2, 0, 65570, 2, 0, 65571, 2, 0, 65572, 1, 0, 65573, 1, 0, 65574, 0, 0, 65575, 1, 0, 65576, 0, 0, 65577, 0, 0, 65578, 0, 0, 65579, 0, 0, 65580, 1, 0, 65581, 1, 0, 65582, 1, 0, 65583, 0, 0, 131082, 2, 0, 131083, 0, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131109, 1, 0, 131110, 1, 0, 131111, 1, 0, 131112, 0, 0, 131113, 0, 0, 131114, 1, 0, 131118, 1, 0, 131119, 0, 0, 196618, 0, 0, 196619, 0, 0, 196625, 1, 0, 196626, 1, 0, 196627, 1, 0, 196628, 0, 0, 196629, 0, 0, 196630, 1, 0, 196645, 1, 0, 196646, 1, 0, 196647, 1, 0, 196648, 1, 0, 196649, 1, 0, 196650, 1, 0, 196654, 0, 0, 196655, 1, 0, 262154, 0, 0, 262155, 1, 0, 262171, 0, 0, 262172, 0, 0, 262173, 1, 0, 262174, 0, 0, 262175, 1, 0, 262176, 2, 0, 262190, 0, 0, 262191, 0, 0, 327690, 1, 0, 327691, 1, 0, 327707, 2, 0, 327708, 2, 0, 327709, 0, 0, 327710, 0, 0, 327711, 0, 0, 327712, 2, 0, 327726, 1, 0, 327727, 1, 0, 393233, 0, 0, 393234, 0, 0, 393235, 1, 0, 393236, 1, 0, 393237, 1, 0, 393238, 1, 0, 393239, 1, 0, 393253, 0, 0, 393254, 0, 0, 393255, 0, 0, 393256, 1, 0, 393257, 1, 0, 393258, 0, 0, 393262, 2, 0, 393263, 1, 0, 458769, 1, 0, 458770, 1, 0, 458771, 0, 0, 458772, 0, 0, 458773, 1, 0, 458774, 0, 0, 458775, 0, 0, 458789, 0, 0, 458790, 1, 0, 458791, 1, 0, 458792, 1, 0, 458793, 1, 0, 458794, 0, 0, 524298, 1, 0, 524299, 0, 0, 524315, 1, 0, 524316, 0, 0, 524317, 1, 0, 524318, 0, 0, 524319, 1, 0, 524320, 2, 0, 589834, 0, 0, 589835, 0, 0, 589851, 2, 0, 589852, 2, 0, 589853, 2, 0, 589854, 0, 0, 589855, 0, 0, 589856, 2, 0, 589870, 1, 0, 589871, 1, 0, 655370, 0, 0, 655371, 0, 0, 655377, 0, 0, 655378, 1, 0, 655379, 1, 0, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655397, 1, 0, 655398, 0, 0, 655399, 1, 0, 655400, 0, 0, 655401, 1, 0, 655402, 1, 0, 655406, 1, 0, 655407, 0, 0, 720906, 0, 0, 720907, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 1, 0, 720916, 0, 0, 720917, 0, 0, 720918, 1, 0, 720919, 0, 0, 720933, 2, 0, 720934, 2, 0, 720935, 0, 0, 720936, 0, 0, 720937, 2, 0, 720938, 0, 0, 720942, 0, 0, 720943, 0, 0, 786442, 1, 0, 786443, 1, 0, 786459, 1, 0, 786460, 0, 0, 786461, 1, 0, 786462, 1, 0, 786463, 0, 0, 786464, 0, 0, 786478, 3, 0, 786479, 1, 0, 851978, 1, 0, 851979, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 851998, 0, 0, 851999, 2, 0, 852000, 0, 0, 852014, 1, 0, 852015, 1, 0, 917514, 1, 0, 917515, 0, 0, 917516, 1, 0, 917517, 0, 0, 917518, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 0, 0, 917522, 3, 0, 917523, 0, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 2, 0, 917528, 1, 0, 917529, 0, 0, 917530, 1, 0, 917531, 1, 0, 917532, 2, 0, 917533, 2, 0, 917534, 2, 0, 917535, 1, 0, 917536, 1, 0, 917537, 0, 0, 917538, 1, 0, 917539, 1, 0, 917540, 2, 0, 917541, 2, 0, 917542, 0, 0, 917543, 0, 0, 917544, 2, 0, 917545, 2, 0, 917546, 1, 0, 917547, 0, 0, 917548, 0, 0, 917549, 2, 0, 917550, 0, 0, 917551, 1, 0, 983050, 0, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 3, 0, 983055, 2, 0, 983056, 3, 0, 983057, 0, 0, 983058, 3, 0, 983059, 0, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 2, 0, 983064, 2, 0, 983065, 1, 0, 983066, 1, 0, 983067, 2, 0, 983068, 2, 0, 983069, 3, 0, 983070, 3, 0, 983071, 0, 0, 983072, 0, 0, 983073, 1, 0, 983074, 1, 0, 983075, 1, 0, 983076, 0, 0, 983077, 0, 0, 983078, 1, 0, 983079, 0, 0, 983080, 0, 0, 983081, 1, 0, 983082, 1, 0, 983083, 1, 0, 983084, 0, 0, 983085, 0, 0, 983086, 2, 0, 983087, 1, 0 )
 
-[connection signal="body_entered" from="Tikbalang" to="Tikbalang" method="_on_Tikbalang_body_entered"]
-[connection signal="body_exited" from="Tikbalang" to="Tikbalang" method="_on_Tikbalang_body_exited"]
 [connection signal="body_entered" from="Hair" to="Hair" method="_on_Hair_body_entered"]
+[connection signal="body_entered" from="YSort/Tikbalang" to="YSort/Tikbalang" method="_on_Tikbalang_body_entered"]
+[connection signal="body_exited" from="YSort/Tikbalang" to="YSort/Tikbalang" method="_on_Tikbalang_body_exited"]
 [connection signal="body_entered" from="Teleporters/Teleporter" to="Teleporters/Teleporter" method="_on_Teleporter_body_entered"]
 [connection signal="body_entered" from="Teleporters/Teleporter2" to="Teleporters/Teleporter2" method="_on_Teleporter_body_entered"]
 [connection signal="body_entered" from="Teleporters/Teleporter3" to="Teleporters/Teleporter3" method="_on_Teleporter_body_entered"]

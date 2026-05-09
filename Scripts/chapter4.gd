@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	
-	get_node("Player/Light2D").visible = false
+	get_node("YSort/Player/Light2D").visible = false
 	get_node("CanvasModulate").visible = false
 	yield(Fade.fade_in(1.0), "completed")
 	DialogueManager.connect("dialogue_finished", self, "_on_chap4_finished")
