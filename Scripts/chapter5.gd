@@ -4,6 +4,5 @@ func _ready():
 	yield(Fade.fade_in(1.0), "completed")
 	
 	DialogueManager.start([
-				"Chapter II\nThe Forest of the Tikbalang.",
-				"Talk to Rapido The Trickster"
+				"Chapter V\nThe Crying Baby."
 			])

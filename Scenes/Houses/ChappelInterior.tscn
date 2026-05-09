@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Images/Chappel_Interior.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Houses/chappel_interior.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Fade.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/SFX/chanak.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/BabyTyanak.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 57.0088
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 29.6142
+
+[node name="ChappelInterior" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 26, -17 )
+polygon = PoolVector2Array( -121, 306, -123, 25, -449, 19, -442, -282, -143, -285, -143, -329, 285, -329, 287, -234, 409, -231, 400, 188, 89, 187, 95, 324, 101, 395, 484, 405, 478, -473, -502, -479, -481, 387, -98, 396, -101, 303 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2, 249 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( -6, -255 )
+current = true
+zoom = Vector2( 0.85, 1 )
+limit_left = -441
+limit_top = -385
+limit_right = 434
+limit_bottom = 329
+smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="UI" parent="." instance=ExtResource( 6 )]
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2( 4, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2( -6, 457 )
+shape = SubResource( 5 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="BabyTyanak" parent="." instance=ExtResource( 7 )]
+position = Vector2( 89, -202 )
+
+[node name="Pray" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pray"]
+position = Vector2( -287, -181 )
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
+[connection signal="body_entered" from="BabyTyanak" to="." method="_on_BabyTyanak_body_entered"]
+[connection signal="body_entered" from="Pray" to="." method="_on_Pray_body_entered"]

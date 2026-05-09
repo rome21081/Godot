@@ -2,6 +2,10 @@ extends Node
 
 var player_position = Vector2.ZERO
 
+var player_lives = 3
+
+var tyanak_enlightened = false
+
 var talked_to_captain = false
 var has_garlic = false
 var has_blessed_oil = false

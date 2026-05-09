@@ -409,12 +409,12 @@ animations = [ {
 radius = 29.0
 height = 118.0
 
-[sub_resource type="Gradient" id=43]
+[sub_resource type="Gradient" id=75]
 interpolation_mode = 2
 colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 1 )
 
 [sub_resource type="GradientTexture2D" id=44]
-gradient = SubResource( 43 )
+gradient = SubResource( 75 )
 fill = 1
 fill_from = Vector2( 0.495833, 0.531771 )
 fill_to = Vector2( 0.870833, 0.166667 )

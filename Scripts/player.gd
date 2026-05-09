@@ -4,6 +4,7 @@ export var speed = 250
 
 var velocity = Vector2()
 var is_attacking = false
+var invincible = false
 
 func _physics_process(delta):
 
@@ -102,6 +103,44 @@ func _on_Area2D_body_entered(body):
 	get_tree().change_scene("res://Scenes/Houses/HallInterior.tscn")
 
 
+func take_damage():
+
+	if invincible:
+		return
+
+	invincible = true
+
+	GameState.player_lives -= 1
+
+	print("Lives:", GameState.player_lives)
+
+	# OPTIONAL FLASH EFFECT
+	modulate = Color(1, 0.4, 0.4)
+
+	yield(get_tree().create_timer(0.2), "timeout")
+
+	modulate = Color(1, 1, 1)
+
+	# GAME OVER
+	if GameState.player_lives <= 0:
+
+		DialogueManager.start([
+			"You were consumed by the darkness..."
+		])
+
+		yield(DialogueManager, "dialogue_finished")
+
+		yield(Fade.fade_out(1.0), "completed")
+
+		GameState.player_lives = 3
+
+		get_tree().reload_current_scene()
+
+	yield(get_tree().create_timer(1.0), "timeout")
+
+	invincible = false
+
+# Entries
 func _on_House1_body_entered(body):
 	if body.name != "Player":
 		return
@@ -126,3 +165,19 @@ func _on_House2_body_entered(body):
 	yield(DialogueManager, "dialogue_finished")
 	yield(Fade.fade_out(1.0), "completed")
 	get_tree().change_scene("res://Scenes/Houses/HouseInterior.tscn")
+
+func set_light(state: bool):
+	$Light2D.enabled = state
+
+
+func _on_Chappel_body_entered(body):
+	if body.name != "Player":
+		return
+
+	DialogueManager.start([
+		"Entering Chappel",
+	])
+
+	yield(DialogueManager, "dialogue_finished")
+	yield(Fade.fade_out(1.0), "completed")
+	get_tree().change_scene("res://Scenes/Houses/ChappelInterior.tscn")

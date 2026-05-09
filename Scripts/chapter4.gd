@@ -47,4 +47,4 @@ func _on_chap4_finished(chapter_id):
 		yield(Fade.fade_out(1.0), "completed")
 		
 		GameState.chapter = 5
-		get_tree().change_scene("res://scenes/Balete.tscn")
+		get_tree().change_scene("res://scenes/Chapel.tscn")

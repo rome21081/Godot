@@ -1,0 +1,106 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/SFX/Jungle.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Scripts/chapter5.gd" type="Script" id=3]
+[ext_resource path="res://Images/green_bg2.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/tyanak_cry.gd" type="Script" id=5]
+[ext_resource path="res://Assets/SFX/chanak.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/FakeBaby.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/TyanakObstacle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Images/chappel.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Fade.tscn" type="PackedScene" id=12]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 35.2474
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 71 )
+
+[node name="Node2D2" type="Node2D"]
+position = Vector2( 65, -54 )
+script = ExtResource( 3 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.121569, 0.113725, 0.113725, 1 )
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="background"]
+margin_left = 1536.0
+margin_right = 3072.0
+margin_bottom = 1024.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/StaticBody2D"]
+polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.57, 3065.26, 1099.03, -62.8719, 1112.48, -62.8719, -128.683, 3193.08, -101.774, 3176.26, 1102.39, 3074.03, 1002.9, 3075.35, 9.22449 )
+
+[node name="FakeBaby" parent="." instance=ExtResource( 8 )]
+position = Vector2( 845, 545 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="UI" parent="." instance=ExtResource( 7 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3184, 367 )
+scale = Vector2( 1.18562, 1.31967 )
+texture = ExtResource( 10 )
+
+[node name="Chappel" type="Area2D" parent="Sprite"]
+position = Vector2( -353.402, 98.5093 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Chappel"]
+position = Vector2( 159.411, 10.6087 )
+shape = SubResource( 2 )
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource( 1 )]
+position = Vector2( 60, 546 )
+scale = Vector2( 0.65, 0.65 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 2.30768, 3.0769 )
+current = true
+zoom = Vector2( 0.65, 0.65 )
+limit_left = 63
+limit_top = -55
+limit_right = 3137
+limit_bottom = 969
+smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="TyanakCry" type="Area2D" parent="."]
+position = Vector2( 244, 548 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TyanakCry"]
+position = Vector2( 0, -1 )
+shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="TyanakCry"]
+stream = ExtResource( 6 )
+
+[node name="TyanakObstacle" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1384, 206 )
+
+[connection signal="body_entered" from="FakeBaby" to="FakeBaby" method="_on_FakeBaby_body_entered"]
+[connection signal="body_exited" from="FakeBaby" to="FakeBaby" method="_on_FakeBaby_body_exited"]
+[connection signal="body_entered" from="Sprite/Chappel" to="Player" method="_on_Chappel_body_entered"]
+[connection signal="body_entered" from="TyanakCry" to="TyanakCry" method="_on_TyanakCry_body_entered"]
