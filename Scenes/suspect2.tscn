@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Images/vendor2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Player/npc.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/suspect2.gd" type="Script" id=2]
 [ext_resource path="res://Assets/PUNY_MYTH-CREATURES-RPGMAKER_v1/Battle Sprites/Bungisngis-Enemy.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 168, 144, 67, 144 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
@@ -11,7 +16,7 @@ region = Rect2( 0, 0, 48, 64 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 1 ), SubResource( 4 ) ],
+"frames": [ SubResource( 5 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -25,8 +30,8 @@ height = 244.487
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 2, 19 )
-scale = Vector2( 0.244822, 0.244822 )
+position = Vector2( -12, 9 )
+scale = Vector2( 3.45261, 3.57607 )
 frames = SubResource( 3 )
 flip_h = true
 
