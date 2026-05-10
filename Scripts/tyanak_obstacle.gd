@@ -43,22 +43,22 @@ func stop_attack():
 
 func _on_TyanakUp1_body_entered(body):
 	if body.name == "Player":
-		body.take_damage()
+		body.take_damage(1)
 
 
 func _on_TyanakUp2_body_entered(body):
 	if body.name == "Player":
-		body.take_damage()
+		body.take_damage(1)
 
 
 func _on_TyanakDown1_body_entered(body):
 	if body.name == "Player":
-		body.take_damage()
+		body.take_damage(1)
 
 
 func _on_TyanakDown2_body_entered(body):
 	if body.name == "Player":
-		body.take_damage()
+		body.take_damage(1)
 
 
 func _on_CryTrigger_body_entered(body):

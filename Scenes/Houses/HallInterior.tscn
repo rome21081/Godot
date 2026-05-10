@@ -52,7 +52,7 @@ frame = 1
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 175, 286 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Player" groups=["camera"]]
 current = true
 limit_left = -621
 limit_top = -385

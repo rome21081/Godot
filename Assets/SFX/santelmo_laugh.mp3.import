@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/santelmo_laugh.mp3-03aa140a528529143c18710846cdca69.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/santelmo_laugh.mp3"
+dest_files=[ "res://.import/santelmo_laugh.mp3-03aa140a528529143c18710846cdca69.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

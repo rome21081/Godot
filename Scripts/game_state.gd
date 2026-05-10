@@ -1,6 +1,5 @@
 extends Node
 
-var player_position = Vector2.ZERO
 
 var player_lives = 3
 

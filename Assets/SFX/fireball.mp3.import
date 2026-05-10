@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fireball.mp3-4c31ae5c8e2c2b93dc6dc6c628d96c89.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/fireball.mp3"
+dest_files=[ "res://.import/fireball.mp3-4c31ae5c8e2c2b93dc6dc6c628d96c89.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

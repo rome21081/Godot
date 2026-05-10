@@ -13,14 +13,18 @@ func _ready():
 		],4)
 	
 	elif GameState.aswang_found:
-		$suspect2.queue_free()
+		if has_node("suspect2"):
+			$suspect2.queue_free()
 		DialogueManager.start([
 			"Go to the house at the end of town",
 			"It's now night time",
 			"There's a pregnant woman and a child there",
 			"It's possible that the aswang atack them first"
 		])
-		get_node("Player/Light2D").visible = true
+		var light = get_node_or_null("YSort/Player/Light2D")
+	
+		if light:
+			light.visible = false
 		get_node("CanvasModulate").visible = true
 		
 	elif GameState.has_garlic:

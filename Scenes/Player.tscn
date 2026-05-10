@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Player/FREE_Adventurer 2D Pixel Art/Sprites/RUN/run_up.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Player/FREE_Adventurer 2D Pixel Art/Sprites/IDLE/idle_up.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Player/FREE_Adventurer 2D Pixel Art/Sprites/IDLE/idle_left.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Player/FREE_Adventurer 2D Pixel Art/Sprites/IDLE/idle_right.png" type="Texture" id=11]
+[ext_resource path="res://Assets/SFX/hurt.mp3" type="AudioStream" id=12]
 
 [sub_resource type="AtlasTexture" id=46]
 flags = 4
@@ -360,7 +361,7 @@ region = Rect2( 672, 0, 96, 80 )
 [sub_resource type="SpriteFrames" id=41]
 animations = [ {
 "frames": [ SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ) ],
-"loop": true,
+"loop": false,
 "name": "attack",
 "speed": 12.0
 }, {
@@ -420,7 +421,7 @@ fill_from = Vector2( 0.495833, 0.531771 )
 fill_to = Vector2( 0.870833, 0.166667 )
 
 [sub_resource type="CircleShape2D" id=45]
-radius = 226.073
+radius = 295.007
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 1 )
@@ -448,3 +449,6 @@ shape = SubResource( 45 )
 
 [node name="Slash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )

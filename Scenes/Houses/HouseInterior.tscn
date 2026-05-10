@@ -85,9 +85,10 @@ frames = SubResource( 13 )
 position = Vector2( -1, 234 )
 scale = Vector2( 0.717514, 0.717514 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -6, -255 )
+[node name="Camera2D" type="Camera2D" parent="Player" groups=["camera"]]
+position = Vector2( -4.1811, -255.047 )
 current = true
+zoom = Vector2( 0.85, 1 )
 limit_left = -441
 limit_top = -385
 limit_right = 434

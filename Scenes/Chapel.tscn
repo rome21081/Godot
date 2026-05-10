@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/SFX/Jungle.mp3" type="AudioStream" id=2]
@@ -10,7 +10,14 @@
 [ext_resource path="res://Scenes/FakeBaby.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/TyanakObstacle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Images/chappel.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Magical Trees/Tree_idol_human.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Fade.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Magical Trees/Willow3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Magical Trees/White_tree2.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Magical Trees/Willow1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Magical Trees/Willow2.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Magical Trees/White_tree1.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Rocks/Black_mushrooms1_grass_shadow.png" type="Texture" id=18]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 35.2474
@@ -18,21 +25,123 @@ radius = 35.2474
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 71 )
 
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 2
+emission_box_extents = Vector3( 800, 200, 1 )
+flag_disable_z = true
+spread = 15.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.8
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 10.0
+scale_random = 0.5
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.00584795, 0.327485, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 0.188235, 0.188235, 0.188235, 1, 0.1875, 0.1875, 0.1875, 1, 0.188235, 0.188235, 0.188235, 0 )
+
+[sub_resource type="GradientTexture2D" id=5]
+gradient = SubResource( 4 )
+fill = 1
+fill_from = Vector2( 0.491379, 0.507004 )
+
 [node name="Node2D2" type="Node2D"]
 position = Vector2( 65, -54 )
 script = ExtResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color( 0.121569, 0.113725, 0.113725, 1 )
+color = Color( 0.25098, 0.207843, 0.207843, 1 )
 
 [node name="background" type="Node2D" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="background"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = -4.0
+margin_right = 1536.0
+margin_bottom = 1020.0
 texture = ExtResource( 4 )
 stretch_mode = 4
+
+[node name="Willow3" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 804.719, 123.031 )
+scale = Vector2( 9.38379, 5.96777 )
+texture = ExtResource( 13 )
+
+[node name="Willow7" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 172, 71 )
+scale = Vector2( 7.97314, 5.07764 )
+texture = ExtResource( 13 )
+
+[node name="Willow2" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 632, 248 )
+scale = Vector2( 5.81641, 3.96484 )
+texture = ExtResource( 16 )
+
+[node name="Willow8" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 439, 63 )
+scale = Vector2( 5.81641, 3.96484 )
+texture = ExtResource( 16 )
+
+[node name="Willow1" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 813, 305 )
+scale = Vector2( 3.97656, 2.83594 )
+texture = ExtResource( 15 )
+
+[node name="WhiteTree2" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 861, 613 )
+scale = Vector2( 4.29688, 3.98438 )
+texture = ExtResource( 14 )
+
+[node name="Willow6" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 848, 713 )
+scale = Vector2( 3.9965, 2.92933 )
+texture = ExtResource( 15 )
+
+[node name="Willow5" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 644, 711 )
+scale = Vector2( 6.77506, 5.59089 )
+texture = ExtResource( 13 )
+
+[node name="Willow4" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 736.25, 914.75 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+
+[node name="WhiteTree1" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 502, 823 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+
+[node name="WhiteTree3" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 133, 814 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+
+[node name="WhiteTree4" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 37, 102 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+
+[node name="WhiteTree5" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 394, 111 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+
+[node name="Willow9" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 152, 909 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+
+[node name="Willow10" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 444, 965 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+
+[node name="TreeIdolHuman" type="Sprite" parent="background/TextureRect"]
+position = Vector2( 1219, 1060 )
+scale = Vector2( 5.51563, 3.45313 )
+texture = ExtResource( 11 )
 
 [node name="TextureRect2" type="TextureRect" parent="background"]
 margin_left = 1536.0
@@ -44,20 +153,34 @@ stretch_mode = 4
 [node name="StaticBody2D" type="StaticBody2D" parent="background"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/StaticBody2D"]
-polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.57, 3065.26, 1099.03, -62.8719, 1112.48, -62.8719, -128.683, 3193.08, -101.774, 3176.26, 1102.39, 3074.03, 1002.9, 3075.35, 9.22449 )
+polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.57, 3065.26, 1099.03, -62.8719, 1112.48, -62.8719, -128.683, 3193.08, -101.774, 3176.26, 1102.39, 3074.03, 1002.9, 3075.35, 9.22449, 2929.81, 8.5896 )
 
 [node name="FakeBaby" parent="." instance=ExtResource( 8 )]
-position = Vector2( 845, 545 )
+position = Vector2( 698, 422 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-autoplay = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 12 )]
 visible = false
+
+[node name="WhiteTree4" type="Sprite" parent="."]
+position = Vector2( 3005, 60 )
+scale = Vector2( 5.84766, 3.73438 )
+texture = ExtResource( 14 )
+
+[node name="WhiteTree3" type="Sprite" parent="."]
+position = Vector2( 2868, 300 )
+scale = Vector2( 4.42579, 4.0625 )
+texture = ExtResource( 14 )
+
+[node name="WhiteTree2" type="Sprite" parent="."]
+position = Vector2( 2953.63, 232 )
+scale = Vector2( 7.45704, 4.15625 )
+texture = ExtResource( 14 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3184, 367 )
@@ -72,10 +195,10 @@ position = Vector2( 159.411, 10.6087 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 1 )]
-position = Vector2( 60, 546 )
+position = Vector2( 94, 526 )
 scale = Vector2( 0.65, 0.65 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Player" groups=["camera"]]
 position = Vector2( 2.30768, 3.0769 )
 current = true
 zoom = Vector2( 0.65, 0.65 )
@@ -99,6 +222,354 @@ stream = ExtResource( 6 )
 
 [node name="TyanakObstacle" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1384, 206 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 1384, 206 )
+
+[node name="Willow3" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 9.38379, 5.96777 )
+texture = ExtResource( 13 )
+offset = Vector2( -50.5759, -82.6472 )
+
+[node name="Willow7" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 7.97314, 5.07764 )
+texture = ExtResource( 13 )
+offset = Vector2( -138.88, -107.383 )
+
+[node name="Willow2" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 5.81641, 3.96484 )
+texture = ExtResource( 16 )
+offset = Vector2( -111.291, -92.879 )
+
+[node name="Willow8" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 5.81641, 3.96484 )
+texture = ExtResource( 16 )
+offset = Vector2( -144.473, -139.539 )
+
+[node name="Willow1" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 3.97656, 2.83594 )
+texture = ExtResource( 15 )
+offset = Vector2( -117.265, -109.752 )
+
+[node name="WhiteTree2" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 4.29688, 3.98438 )
+texture = ExtResource( 14 )
+offset = Vector2( -97.3527, -0.81575 )
+
+[node name="Willow6" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 3.9965, 2.92933 )
+texture = ExtResource( 15 )
+offset = Vector2( -107.923, 33.028 )
+
+[node name="Willow5" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 6.77506, 5.59089 )
+texture = ExtResource( 13 )
+offset = Vector2( -93.7722, 16.9472 )
+
+[node name="Willow4" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+offset = Vector2( -107.354, 85.001 )
+
+[node name="WhiteTree1" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -236.122, 66.4506 )
+
+[node name="WhiteTree3" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -348.213, 63.5579 )
+
+[node name="WhiteTree4" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -377.374, -165.283 )
+
+[node name="WhiteTree5" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -268.929, -162.39 )
+
+[node name="Willow9" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+offset = Vector2( -222.851, 83.3636 )
+
+[node name="Willow10" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+offset = Vector2( -165.128, 99.3102 )
+
+[node name="TreeIdolHuman" type="Sprite" parent="Node2D"]
+position = Vector2( 1410, 422 )
+scale = Vector2( 5.51563, 3.45313 )
+texture = ExtResource( 11 )
+offset = Vector2( -10.9348, 128.507 )
+
+[node name="Willow11" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 9.38379, 5.96777 )
+texture = ExtResource( 13 )
+offset = Vector2( -50.5759, -82.6472 )
+
+[node name="Willow12" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 7.97314, 5.07764 )
+texture = ExtResource( 13 )
+offset = Vector2( -138.88, -107.383 )
+
+[node name="Willow13" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 5.81641, 3.96484 )
+texture = ExtResource( 16 )
+offset = Vector2( -111.291, -92.879 )
+
+[node name="Willow14" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 5.81641, 3.96484 )
+texture = ExtResource( 16 )
+offset = Vector2( -144.473, -139.539 )
+
+[node name="Willow15" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 3.97656, 2.83594 )
+texture = ExtResource( 15 )
+offset = Vector2( -117.265, -109.752 )
+
+[node name="WhiteTree6" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 4.29688, 3.98438 )
+texture = ExtResource( 14 )
+offset = Vector2( -97.3527, -0.81575 )
+
+[node name="Willow16" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 3.9965, 2.92933 )
+texture = ExtResource( 15 )
+offset = Vector2( -107.923, 33.028 )
+
+[node name="Willow17" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 6.77506, 5.59089 )
+texture = ExtResource( 13 )
+offset = Vector2( -93.7722, 16.9472 )
+
+[node name="Willow18" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+offset = Vector2( -107.354, 85.001 )
+
+[node name="WhiteTree7" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -236.122, 66.4506 )
+
+[node name="WhiteTree8" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -348.213, 63.5579 )
+
+[node name="WhiteTree9" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -377.374, -165.283 )
+
+[node name="WhiteTree10" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -268.929, -162.39 )
+
+[node name="Willow19" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+offset = Vector2( -222.851, 83.3636 )
+
+[node name="Willow20" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+offset = Vector2( -165.128, 99.3102 )
+
+[node name="TreeIdolHuman2" type="Sprite" parent="Node2D"]
+position = Vector2( 932, 422 )
+scale = Vector2( 5.51563, 3.45313 )
+texture = ExtResource( 11 )
+offset = Vector2( -10.9348, 128.507 )
+
+[node name="Willow21" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 9.38379, 5.96777 )
+texture = ExtResource( 13 )
+offset = Vector2( -50.5759, -82.6472 )
+
+[node name="Willow22" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 7.97314, 5.07764 )
+texture = ExtResource( 13 )
+offset = Vector2( -138.88, -107.383 )
+
+[node name="Willow23" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 5.81641, 3.96484 )
+texture = ExtResource( 16 )
+offset = Vector2( -111.291, -92.879 )
+
+[node name="Willow24" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 5.81641, 3.96484 )
+texture = ExtResource( 16 )
+offset = Vector2( -144.473, -139.539 )
+
+[node name="Willow25" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 3.97656, 2.83594 )
+texture = ExtResource( 15 )
+offset = Vector2( -117.265, -109.752 )
+
+[node name="WhiteTree11" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 4.29688, 3.98438 )
+texture = ExtResource( 14 )
+offset = Vector2( -97.3527, -0.81575 )
+
+[node name="Willow26" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 3.9965, 2.92933 )
+texture = ExtResource( 15 )
+offset = Vector2( -107.923, 33.028 )
+
+[node name="Willow27" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 6.77506, 5.59089 )
+texture = ExtResource( 13 )
+offset = Vector2( -93.7722, 16.9472 )
+
+[node name="Willow28" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+offset = Vector2( -107.354, 85.001 )
+
+[node name="WhiteTree12" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -236.122, 66.4506 )
+
+[node name="WhiteTree13" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -348.213, 63.5579 )
+
+[node name="WhiteTree14" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -377.374, -165.283 )
+
+[node name="WhiteTree15" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 3.29199, 3.11133 )
+texture = ExtResource( 17 )
+offset = Vector2( -268.929, -162.39 )
+
+[node name="Willow29" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+offset = Vector2( -222.851, 83.3636 )
+
+[node name="Willow30" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 5.05859, 3.51172 )
+texture = ExtResource( 15 )
+offset = Vector2( -165.128, 99.3102 )
+
+[node name="TreeIdolHuman3" type="Sprite" parent="Node2D"]
+position = Vector2( 564, 435 )
+scale = Vector2( 5.51563, 3.45313 )
+texture = ExtResource( 11 )
+offset = Vector2( -10.9348, 128.507 )
+
+[node name="BlackMushrooms1GrassShadow" type="Sprite" parent="."]
+position = Vector2( 3040, 876 )
+scale = Vector2( 9.73438, 5.90625 )
+texture = ExtResource( 18 )
+
+[node name="WhiteTree5" type="Sprite" parent="BlackMushrooms1GrassShadow"]
+position = Vector2( 9.45105, -15.5767 )
+scale = Vector2( 0.644062, 0.825397 )
+texture = ExtResource( 14 )
+
+[node name="WhiteTree6" type="Sprite" parent="BlackMushrooms1GrassShadow"]
+position = Vector2( -10.825, -14.3069 )
+scale = Vector2( 0.583066, 0.806879 )
+texture = ExtResource( 14 )
+
+[node name="BlackMushrooms1GrassShadow2" type="Sprite" parent="."]
+position = Vector2( 2862, 939 )
+scale = Vector2( 9.73438, 5.90625 )
+texture = ExtResource( 18 )
+
+[node name="TreeIdolHuman2" type="Sprite" parent="."]
+position = Vector2( 1613, 1062 )
+scale = Vector2( 5.51563, 3.45313 )
+texture = ExtResource( 11 )
+
+[node name="TreeIdolHuman3" type="Sprite" parent="."]
+position = Vector2( 2079, 1077 )
+scale = Vector2( 5.51563, 3.45313 )
+texture = ExtResource( 11 )
+
+[node name="TreeIdolHuman4" type="Sprite" parent="."]
+position = Vector2( 2517, 1101 )
+scale = Vector2( 5.51563, 3.45313 )
+texture = ExtResource( 11 )
+
+[node name="TreeIdolHuman5" type="Sprite" parent="."]
+position = Vector2( 2937, 1009 )
+scale = Vector2( 5.51563, 3.45313 )
+texture = ExtResource( 11 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 2681, 871, 2702, 756, 2844, 733, 3000, 730, 3142, 766, 3182, 858, 3129, 871 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 13, 834, 134, 793, 273, 872, 432, 880, 530, 706, 602, 600, 870, 593, 979, 744, 866, 876, 1111, 727, 1601, 602, 2157, 598, 2467, 598, 2509, 746, 2438, 921, 2432, 938, 2431, 951, 2525, 968, 2585, 980, 2584, 1019, 2663, 1008, 2769, 861, 3022, 857, 3109, 921, 3169, 1091, -51, 1095 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 43, 121, 239, 136, 473, 132, 594, 249, 749, 283, 828, 344, 934, 291, 1465, 419, 2427, 375, 2795, 57, 2852, 260, 3271, 94, 3173, -121, -29, -113, -25, 121 )
+
+[node name="Fog" type="Particles2D" parent="StaticBody2D"]
+modulate = Color( 1, 1, 1, 0.235294 )
+position = Vector2( 1636, 481 )
+process_material = SubResource( 3 )
+texture = SubResource( 5 )
 
 [connection signal="body_entered" from="FakeBaby" to="FakeBaby" method="_on_FakeBaby_body_entered"]
 [connection signal="body_exited" from="FakeBaby" to="FakeBaby" method="_on_FakeBaby_body_exited"]

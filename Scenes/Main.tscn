@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=2]
@@ -27,6 +27,10 @@
 [ext_resource path="res://Scenes/Houses/houuseeee2.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/Trees/Tree 1.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/Trees/tree 2.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Images/cave2.png" type="Texture" id=28]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 48.2597
 
 [node name="Node2D2" type="Node2D"]
 position = Vector2( 65, -54 )
@@ -77,7 +81,7 @@ scale = Vector2( 0.584004, 0.584004 )
 position = Vector2( -589.037, 640.406 )
 scale = Vector2( 1.71232, 1.71232 )
 
-[node name="Camera2D2" type="Camera2D" parent="YSort/Player"]
+[node name="Camera2D2" type="Camera2D" parent="YSort/Player" groups=["camera"]]
 position = Vector2( 7.99994, -14.9996 )
 current = true
 limit_left = 65
@@ -103,19 +107,19 @@ position = Vector2( 3599.29, 1446.91 )
 scale = Vector2( 1.23425, 1.23425 )
 
 [node name="boneess" parent="YSort" instance=ExtResource( 24 )]
-position = Vector2( 3063.33, 1614.71 )
+position = Vector2( 4094.15, 666.091 )
 scale = Vector2( 2.13513, 2.13513 )
 
 [node name="boneess9" parent="YSort" instance=ExtResource( 24 )]
-position = Vector2( 4006.82, 1491.43 )
+position = Vector2( 1011.98, -73.6298 )
 scale = Vector2( 2.13513, 2.13513 )
 
 [node name="boneess2" parent="YSort" instance=ExtResource( 24 )]
-position = Vector2( 2464.02, 530.818 )
+position = Vector2( 1422.94, 756.844 )
 scale = Vector2( 2.13513, 2.13513 )
 
 [node name="boneess3" parent="YSort" instance=ExtResource( 24 )]
-position = Vector2( 3263.67, 787.665 )
+position = Vector2( 4489.7, 1049.65 )
 scale = Vector2( 2.13513, 2.13513 )
 
 [node name="boneess4" parent="YSort" instance=ExtResource( 24 )]
@@ -127,11 +131,11 @@ position = Vector2( 4659.21, 405.819 )
 scale = Vector2( 2.13513, 2.13513 )
 
 [node name="boneess6" parent="YSort" instance=ExtResource( 24 )]
-position = Vector2( 4174.63, 2066.77 )
+position = Vector2( 3748.26, 2768.82 )
 scale = Vector2( 2.13513, 2.13513 )
 
 [node name="boneess7" parent="YSort" instance=ExtResource( 24 )]
-position = Vector2( 3443.47, 2073.61 )
+position = Vector2( 2902.38, 2436.63 )
 scale = Vector2( 2.13513, 2.13513 )
 
 [node name="boneess8" parent="YSort" instance=ExtResource( 24 )]
@@ -470,7 +474,19 @@ scale = Vector2( 0.42738, 0.465631 )
 [node name="CanvasLayer" parent="." instance=ExtResource( 12 )]
 visible = false
 
+[node name="Cave" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Cave"]
+position = Vector2( 3832, 727 )
+scale = Vector2( 0.674, 1 )
+texture = ExtResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave"]
+position = Vector2( 3830, 797 )
+shape = SubResource( 1 )
+
 [connection signal="body_entered" from="YSort/NPC" to="YSort/NPC" method="_on_NPC_body_entered"]
 [connection signal="body_exited" from="YSort/NPC" to="YSort/NPC" method="_on_NPC_body_exited"]
 [connection signal="body_entered" from="YSort/Babaylan" to="YSort/Babaylan" method="_on_Babaylan_body_entered"]
 [connection signal="body_entered" from="YSort/Symbol" to="YSort/Symbol" method="_on_Symbol_body_entered"]
+[connection signal="body_entered" from="Cave" to="YSort/Player" method="_on_Cave_body_entered"]

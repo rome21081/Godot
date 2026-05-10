@@ -27,9 +27,10 @@ position = Vector2( -283, -264 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2, 249 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Player" groups=["camera"]]
 position = Vector2( -6, -255 )
 current = true
+zoom = Vector2( 0.85, 1 )
 limit_left = -441
 limit_top = -385
 limit_right = 434

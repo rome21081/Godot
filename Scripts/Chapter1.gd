@@ -9,6 +9,18 @@ export var enemies_per_spawn := 2
 export var max_enemies := 8
 
 func _ready():
+	Life.set_enabled(true)
+	yield(Fade.fade_in(1.0), "completed")
+	
+	if GameState.chapter ==5:
+		DialogueManager.start([
+			"Go to the forest and enter the cave"
+		])
+	else:
+		DialogueManager.start([
+			"Chapter I: The Night the Town Changed"
+		])
+	
 	randomize()
 
 func _process(delta):

@@ -7,5 +7,6 @@ func _on_Symbol_body_entered(body):
 		DialogueManager.start([
 			"A strange symbol burned\n into the ground...",
 			"It's still warm.",
-			"Something is wrong..."
+			"Something is wrong...",
+			"Outrun Them"
 		])

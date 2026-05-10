@@ -324,7 +324,7 @@ scale = Vector2( 2, 2 )
 position = Vector2( 238.25, 463 )
 scale = Vector2( 0.325, 0.325 )
 
-[node name="Camera2D2" type="Camera2D" parent="YSort/Player"]
+[node name="Camera2D2" type="Camera2D" parent="YSort/Player" groups=["camera"]]
 position = Vector2( -1, 0 )
 current = true
 zoom = Vector2( 0.65, 0.65 )

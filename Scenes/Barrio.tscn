@@ -118,10 +118,10 @@ position = Vector2( 472.891, -517.225 )
 polygon = PoolVector2Array( -33.9891, 8.86658, -32.5113, -47.2893, -33.9891, -85.7117, -19.2112, -115.267, 7.38892, -94.5784, 16.2556, -48.7671, 25.1223, 16.2555, 14.7778, 29.5555 )
 
 [node name="Player" parent="YSort" groups=["player"] instance=ExtResource( 1 )]
-position = Vector2( -2800.13, 1002.79 )
+position = Vector2( 112.613, 1068.93 )
 scale = Vector2( 1.16188, 1.16188 )
 
-[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
+[node name="Camera2D" type="Camera2D" parent="YSort/Player" groups=["camera"]]
 position = Vector2( 2.30768, 3.0769 )
 current = true
 zoom = Vector2( 0.65, 0.65 )
@@ -167,7 +167,7 @@ position = Vector2( -2591.89, -73.2878 )
 position = Vector2( -557.703, -10.7251 )
 
 [node name="houuseeee2" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 386.102, 305.664 )
+position = Vector2( 403.977, 586.303 )
 scale = Vector2( 0.983676, 0.874544 )
 
 [node name="House" type="Area2D" parent="YSort/houuseeee2"]
@@ -219,7 +219,7 @@ position = Vector2( 1015.31, 182.326 )
 scale = Vector2( 5.53554, 4.99991 )
 
 [node name="light" type="Sprite" parent="YSort"]
-position = Vector2( -516.59, 681.041 )
+position = Vector2( -493.352, 731.091 )
 scale = Vector2( 0.798502, 0.798502 )
 texture = ExtResource( 18 )
 
@@ -290,7 +290,7 @@ scale = Vector2( -0.394619, 0.0924641 )
 polygon = PoolVector2Array( -33.3436, 45.678, -22.6407, -122.979, 30.8738, -128.25, 33.7554, 45.678, 20.5825, 110.681, -2.46985, 108.925 )
 
 [node name="light13" type="Sprite" parent="YSort"]
-position = Vector2( -806.166, 668.528 )
+position = Vector2( -773.991, 722.153 )
 scale = Vector2( 0.798502, 0.798502 )
 texture = ExtResource( 18 )
 
@@ -340,7 +340,7 @@ texture = ExtResource( 18 )
 polygon = PoolVector2Array( -33.5784, 136.553, -73.873, 257.436, 13.4314, 255.198, -15.6699, 149.985, -40.2942, 152.223 )
 
 [node name="light21" type="Sprite" parent="YSort"]
-position = Vector2( 673.891, 618.478 )
+position = Vector2( 716.791, 727.516 )
 scale = Vector2( 0.798502, 0.798502 )
 texture = ExtResource( 18 )
 
@@ -350,7 +350,7 @@ texture = ExtResource( 18 )
 polygon = PoolVector2Array( -33.5784, 136.553, -73.873, 257.436, 13.4314, 255.198, -15.6699, 149.985, -40.2942, 152.223 )
 
 [node name="light22" type="Sprite" parent="YSort"]
-position = Vector2( 132.276, 681.041 )
+position = Vector2( 134.063, 752.541 )
 scale = Vector2( 0.798502, 0.798502 )
 texture = ExtResource( 18 )
 

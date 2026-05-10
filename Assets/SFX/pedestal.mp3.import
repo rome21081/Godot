@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pedestal.mp3-2560d6e08b91767d65f77aefdd97a18c.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/pedestal.mp3"
+dest_files=[ "res://.import/pedestal.mp3-2560d6e08b91767d65f77aefdd97a18c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

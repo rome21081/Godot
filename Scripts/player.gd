@@ -6,8 +6,22 @@ var velocity = Vector2()
 var is_attacking = false
 var invincible = false
 
-func _physics_process(delta):
+func _ready():
+	Life.set_enabled(true)
 
+func _physics_process(delta):
+	
+	if is_knocked:
+		knockback_velocity = move_and_slide(knockback_velocity)
+
+		# slow it down over time
+		knockback_velocity = knockback_velocity.linear_interpolate(Vector2(), 0.2)
+
+		if knockback_velocity.length() < 10:
+			is_knocked = false
+
+		return
+	
 	if DialogueManager.is_active:
 		velocity = Vector2.ZERO
 
@@ -74,18 +88,21 @@ func attack():
 		return
 
 	is_attacking = true
+	invincible = true
 
-	# play full animation ONCE
 	$AnimatedSprite.play("attack")
 	$Slash.play()
 
-	# optional damage
 	for body in $Area2D.get_overlapping_bodies():
-		if body.has_method("take_damage"):
+		if body != self and body.has_method("take_damage"):
 			body.take_damage(1)
 
-	# wait until animation finishes
-	yield($AnimatedSprite, "animation_finished")
+	yield(get_tree().create_timer(0.2), "timeout")
+
+	invincible = false
+
+	# instead of animation_finished
+	yield(get_tree().create_timer(0.3), "timeout")
 
 	is_attacking = false
 
@@ -102,41 +119,46 @@ func _on_Area2D_body_entered(body):
 	yield(Fade.fade_out(1.0), "completed")
 	get_tree().change_scene("res://Scenes/Houses/HallInterior.tscn")
 
+var knockback_velocity = Vector2()
+var is_knocked = false
 
-func take_damage():
+func take_damage(amount):
 
 	if invincible:
 		return
 
 	invincible = true
-
-	GameState.player_lives -= 1
+	$hurt.play()
+	Life.shake()
+	GameState.player_lives -= amount
 
 	print("Lives:", GameState.player_lives)
-
-	# OPTIONAL FLASH EFFECT
+	
+	# 🔥 ALWAYS PUSH LEFT
+	knockback_velocity = Vector2(-1000, 0)
+	is_knocked = true
+	
 	modulate = Color(1, 0.4, 0.4)
 
 	yield(get_tree().create_timer(0.2), "timeout")
 
 	modulate = Color(1, 1, 1)
 
-	# GAME OVER
 	if GameState.player_lives <= 0:
 
 		DialogueManager.start([
-			"You were consumed by the darkness..."
+			"You were consumed by the darkness...",
+			"You have failed to restore the seal"
 		])
 
 		yield(DialogueManager, "dialogue_finished")
-
 		yield(Fade.fade_out(1.0), "completed")
 
 		GameState.player_lives = 3
 
-		get_tree().reload_current_scene()
+		get_tree().change_scene("res://Scenes/Title.tscn")
 
-	yield(get_tree().create_timer(1.0), "timeout")
+	#yield(get_tree().create_timer(1.0), "timeout")
 
 	invincible = false
 
@@ -181,3 +203,19 @@ func _on_Chappel_body_entered(body):
 	yield(DialogueManager, "dialogue_finished")
 	yield(Fade.fade_out(1.0), "completed")
 	get_tree().change_scene("res://Scenes/Houses/ChappelInterior.tscn")
+
+
+func _on_Cave_body_entered(body):
+	if GameState.chapter ==6:
+
+		DialogueManager.start([
+			"Entering Cave",
+		])
+
+		yield(DialogueManager, "dialogue_finished")
+		yield(Fade.fade_out(1.0), "completed")
+		get_tree().change_scene("res://Scenes/Houses/Final.tscn")
+	else:
+		DialogueManager.start([
+			"...",
+		])
