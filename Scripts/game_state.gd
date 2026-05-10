@@ -1,7 +1,12 @@
 extends Node
 
+var return_position = Vector2()
+var has_return_position = false
 
-var player_lives = 3
+var player_lives = 5 setget set_lives
+
+func set_lives(value):
+	player_lives = clamp(value, 0, 5)
 
 var tyanak_enlightened = false
 

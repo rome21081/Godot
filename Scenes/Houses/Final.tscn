@@ -179,7 +179,7 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -452, 237 )
 scale = Vector2( 1.39732, 0.773035 )
 frames = SubResource( 7 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Node2D/Tikbalang"]
@@ -200,7 +200,7 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 472, -236 )
 scale = Vector2( 3.71429, 3.23684 )
 frames = SubResource( 20 )
-frame = 1
+frame = 7
 playing = true
 flip_h = true
 
@@ -279,16 +279,6 @@ scale = Vector2( 1.75, 1.5 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 283 )
 
-[node name="Camera2D" type="Camera2D" parent="Player" groups=["camera"]]
-current = true
-zoom = Vector2( 1, 1.5 )
-limit_left = -621
-limit_top = -385
-limit_right = 594
-limit_bottom = 387
-smoothing_enabled = true
-editor_draw_limits = true
-
 [node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
 visible = false
 
@@ -297,7 +287,12 @@ visible = false
 [node name="pedestal" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )
 
-[node name="YSort" type="YSort" parent="."]
+[node name="CameraBounds" type="ColorRect" parent="."]
+margin_left = -633.0
+margin_top = -383.0
+margin_right = 596.0
+margin_bottom = 388.0
+color = Color( 1, 1, 1, 0 )
 
 [connection signal="body_entered" from="StaticBody2D/Node2D/Tikbalang" to="." method="_on_Tikbalang_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/Node2D/Tikbalang" to="." method="_on_Tikbalang_body_exited"]

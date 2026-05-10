@@ -198,17 +198,6 @@ shape = SubResource( 2 )
 position = Vector2( 94, 526 )
 scale = Vector2( 0.65, 0.65 )
 
-[node name="Camera2D" type="Camera2D" parent="Player" groups=["camera"]]
-position = Vector2( 2.30768, 3.0769 )
-current = true
-zoom = Vector2( 0.65, 0.65 )
-limit_left = 63
-limit_top = -55
-limit_right = 3137
-limit_bottom = 969
-smoothing_enabled = true
-editor_draw_limits = true
-
 [node name="TyanakCry" type="Area2D" parent="."]
 position = Vector2( 244, 548 )
 script = ExtResource( 5 )
@@ -570,6 +559,11 @@ modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 1636, 481 )
 process_material = SubResource( 3 )
 texture = SubResource( 5 )
+
+[node name="CameraBounds" type="ColorRect" parent="."]
+margin_right = 3072.0
+margin_bottom = 1065.0
+color = Color( 1, 1, 1, 0 )
 
 [connection signal="body_entered" from="FakeBaby" to="FakeBaby" method="_on_FakeBaby_body_entered"]
 [connection signal="body_exited" from="FakeBaby" to="FakeBaby" method="_on_FakeBaby_body_exited"]

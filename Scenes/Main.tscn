@@ -81,16 +81,6 @@ scale = Vector2( 0.584004, 0.584004 )
 position = Vector2( -589.037, 640.406 )
 scale = Vector2( 1.71232, 1.71232 )
 
-[node name="Camera2D2" type="Camera2D" parent="YSort/Player" groups=["camera"]]
-position = Vector2( 7.99994, -14.9996 )
-current = true
-limit_left = 65
-limit_top = -250
-limit_right = 5100
-limit_bottom = 2000
-smoothing_enabled = true
-editor_draw_screen = false
-
 [node name="NPC" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( -518.832, 1128.42 )
 scale = Vector2( 1.63995, 1.63995 )
@@ -484,6 +474,12 @@ texture = ExtResource( 28 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cave"]
 position = Vector2( 3830, 797 )
 shape = SubResource( 1 )
+
+[node name="CameraBounds" type="ColorRect" parent="."]
+margin_top = 20.0
+margin_right = 5200.0
+margin_bottom = 2146.0
+color = Color( 1, 1, 1, 0 )
 
 [connection signal="body_entered" from="YSort/NPC" to="YSort/NPC" method="_on_NPC_body_entered"]
 [connection signal="body_exited" from="YSort/NPC" to="YSort/NPC" method="_on_NPC_body_exited"]

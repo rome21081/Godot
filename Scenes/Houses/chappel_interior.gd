@@ -25,118 +25,75 @@ func _on_BabyTyanak_body_entered(body):
 		DialogueManager.start([
 			"Sio: What… are you?",
 
-			"(The crying stops. A voice echoes, small and broken.)",
+			"Tyanak: I remember warmth before the darkness.",
+			"Tyanak: A voice… calling me her child.",
 
-			"Tyanak: I remember a voice before the darkness.",
-			"Tyanak: It did not sound like the forest… it sounded like warmth.",
+			"Sio: Who?",
 
-			"Sio: Who are you talking about?",
-
-			"Tyanak: The one who called me her child.",
+			"Tyanak: The Babaylan.",
 
 			"(pause)",
 
-			"Tyanak: She did not speak my name.",
-			"Tyanak: Because I did not have one yet.",
+			"Tyanak: I was born from a ritual that should not have been done alone.",
+			"Tyanak: She held me… but her hands shook with regret.",
 
-			"Tyanak: I was born under chanting… under old words that should not have been spoken alone.",
-
-			"Sio: The Babaylan…?",
-
-			"(The air grows heavy.)",
-
-			"Tyanak: Yes.",
-
-			"Tyanak: She held me when I first opened my eyes.",
-			"Tyanak: But her hands were shaking.",
-
-			"Tyanak: Not with fear…",
-			"Tyanak: With regret.",
-
-			"Sio: What did she do to you?",
+			"Sio: What did she do?",
 
 			"Tyanak: She tried to save me.",
-			"Tyanak: But the forest does not return what it takes.",
+			"Tyanak: But the forest never returns what it takes.",
 
-			"Tyanak: I was not meant to stay in this world.",
-			"Tyanak: I was a mistake the ritual refused to erase.",
+			"Tyanak: I was a mistake that stayed alive.",
 
-			"Sio: So you… are her child?",
+			"Sio: So you’re her child?",
 
-			"(long silence)",
+			"(silence)",
 
-			"Tyanak: I am what remained of her love… after it was punished.",
+			"Tyanak: I am what remains of her love… punished into form.",
 
-			"Tyanak: She still comes to the trees sometimes.",
-			"Tyanak: She does not look at me directly.",
+			"Tyanak: She still visits the trees.",
+			"Tyanak: She does not look at me… but she prays.",
 
-			"Tyanak: But I hear her prayers anyway.",
-
-			"Sio: What does she pray for?",
+			"Sio: For what?",
 
 			"Tyanak: That I forget her.",
 
-			"(soft laughter, almost crying)",
+			"(soft laugh)",
 
-			"Tyanak: But I was held once.",
-			"Tyanak: And things that are held… do not forget.",
-			
+			"Tyanak: But I was held once… and held things do not forget.",
+
 			"Sio: What do you want from me?",
-			"(The air grows still. The crying returns, but softer now.)",
 
 			"Tyanak: Not fear.",
-			"Tyanak: Not escape through violence.",
+			"Tyanak: Not violence.",
 
-			"Tyanak: I have chased enough footsteps in the dark.",
-
-			"Sio: Then what is it?",
-
-			"Tyanak: There is a place where voices become quiet.",
-			"Tyanak: A place where prayers are no longer broken.",
+			"Tyanak: There is an altar.",
 
 			"Sio: The altar…",
 
-			"(pause)",
-
 			"Tyanak: Yes.",
-
-			"Tyanak: She once knelt there.",
-			"Tyanak: The one who called me hers… before she could no longer look at me.",
-
-			"Tyanak: She placed words into stone and light.",
-			"Tyanak: Words that were meant to bind me here.",
+			"Tyanak: She bound me there with forgotten words.",
 
 			"Sio: You want me to undo it?",
 
-			"(long silence)",
+			"(long pause)",
 
-			"Tyanak: I want you to finish what she could not.",
+			"Tyanak: No.",
+			"Tyanak: I want you to finish it.",
 
-			"Tyanak: Not with weapons.",
-			"Tyanak: Not with running.",
-
-			"Tyanak: With prayer.",
+			"Tyanak: Not with weapons…",
+			"Tyanak: but with prayer.",
 
 			"Tyanak: Stand before the altar.",
-			"Tyanak: Speak the words that were forgotten when I was born.",
+			"Tyanak: Speak what was lost when I was born.",
 
-			"Tyanak: If you truly listen…",
-			"Tyanak: you will hear her voice inside them too.",
+			"Sio: And then?",
 
-			"Sio: And if I do it?",
+			"Tyanak: I will finally rest.",
+			"Tyanak: No longer chasing kindness like a wound.",
 
-			"(soft breathing, like fading wind)",
+			"(fade)",
 
-			"Tyanak: Then I will no longer remember hunger.",
-			"Tyanak: No longer remember being held only to be left.",
-
-			"Tyanak: And I will stop following the sound of kindness… like a wound that never closes.",
-
-			"(very long pause)",
-
-			"Tyanak: Pray for me…",
-			"Tyanak: not as a monster…",
-
+			"Tyanak: Pray for me… not as a monster…",
 			"Tyanak: but as something that was never allowed to rest."
 		])
 	else:

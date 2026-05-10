@@ -69,8 +69,9 @@ func start_endurance_phase():
 	$Boss.start_battle()
 
 	yield(get_tree().create_timer(15.0), "timeout")
-
+	
 	$Boss.stop_battle()
+	$Boss/santelmo.playing = false
 	$Boss/AnimationPlayer.play("despawn")
 	$Boss/despawn.play()
 	

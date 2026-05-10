@@ -11,6 +11,7 @@ margin_left = 9.0
 margin_top = 9.0
 margin_right = 197.0
 margin_bottom = 118.0
+rect_pivot_offset = Vector2( -712, -9 )
 
 [node name="Heart1" type="TextureRect" parent="Hearts"]
 modulate = Color( 0.627451, 0, 0, 1 )
@@ -29,5 +30,19 @@ texture = ExtResource( 2 )
 modulate = Color( 0.627451, 0, 0, 1 )
 margin_left = 128.0
 margin_right = 188.0
+margin_bottom = 109.0
+texture = ExtResource( 2 )
+
+[node name="Heart4" type="TextureRect" parent="Hearts"]
+modulate = Color( 0.627451, 0, 0, 1 )
+margin_left = 192.0
+margin_right = 252.0
+margin_bottom = 109.0
+texture = ExtResource( 2 )
+
+[node name="Heart5" type="TextureRect" parent="Hearts"]
+modulate = Color( 0.627451, 0, 0, 1 )
+margin_left = 256.0
+margin_right = 316.0
 margin_bottom = 109.0
 texture = ExtResource( 2 )

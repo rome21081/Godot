@@ -6,8 +6,18 @@ var velocity = Vector2()
 var is_attacking = false
 var invincible = false
 
+onready var camera = $Camera2D
+
 func _ready():
 	Life.set_enabled(true)
+	
+	var bounds = get_tree().get_current_scene().get_node("CameraBounds")
+
+	camera.limit_left = bounds.rect_global_position.x
+	camera.limit_top = bounds.rect_global_position.y
+
+	camera.limit_right = bounds.rect_global_position.x + bounds.rect_size.x
+	camera.limit_bottom = bounds.rect_global_position.y + bounds.rect_size.y
 
 func _physics_process(delta):
 	
@@ -105,19 +115,9 @@ func attack():
 	yield(get_tree().create_timer(0.3), "timeout")
 
 	is_attacking = false
+	if not is_attacking:
+		$AnimatedSprite.play("idle_down")
 
-
-func _on_Area2D_body_entered(body):
-	if body.name != "Player":
-		return
-
-	DialogueManager.start([
-		"Entering House",
-	])
-
-	yield(DialogueManager, "dialogue_finished")
-	yield(Fade.fade_out(1.0), "completed")
-	get_tree().change_scene("res://Scenes/Houses/HallInterior.tscn")
 
 var knockback_velocity = Vector2()
 var is_knocked = false
@@ -154,8 +154,8 @@ func take_damage(amount):
 		yield(DialogueManager, "dialogue_finished")
 		yield(Fade.fade_out(1.0), "completed")
 
-		GameState.player_lives = 3
-
+		GameState.player_lives = 5
+		GameState.chapter ==2
 		get_tree().change_scene("res://Scenes/Title.tscn")
 
 	#yield(get_tree().create_timer(1.0), "timeout")
@@ -163,10 +163,29 @@ func take_damage(amount):
 	invincible = false
 
 # Entries
-func _on_House1_body_entered(body):
+
+func _on_Area2D_body_entered(body):
 	if body.name != "Player":
 		return
 
+	GameState.return_position = body.global_position
+	GameState.has_return_position = true
+
+	DialogueManager.start([
+		"Entering Town Hall",
+	])
+
+	yield(DialogueManager, "dialogue_finished")
+	yield(Fade.fade_out(1.0), "completed")
+	get_tree().change_scene("res://Scenes/Houses/HallInterior.tscn")
+
+func _on_House1_body_entered(body):
+	if body.name != "Player":
+		return
+	
+	GameState.return_position = body.global_position
+	GameState.has_return_position = true
+	
 	DialogueManager.start([
 		"Entering Captain's House",
 	])
@@ -179,7 +198,10 @@ func _on_House1_body_entered(body):
 func _on_House2_body_entered(body):
 	if body.name != "Player":
 		return
-
+	
+	GameState.return_position = body.global_position
+	GameState.has_return_position = true
+	
 	DialogueManager.start([
 		"Entering House",
 	])
@@ -195,7 +217,10 @@ func set_light(state: bool):
 func _on_Chappel_body_entered(body):
 	if body.name != "Player":
 		return
-
+	
+	GameState.return_position = body.global_position
+	GameState.has_return_position = true
+	
 	DialogueManager.start([
 		"Entering Chappel",
 	])
@@ -207,7 +232,10 @@ func _on_Chappel_body_entered(body):
 
 func _on_Cave_body_entered(body):
 	if GameState.chapter ==6:
-
+		GameState.player_lives += 5
+		GameState.return_position = body.global_position
+		GameState.has_return_position = true
+		
 		DialogueManager.start([
 			"Entering Cave",
 		])

@@ -118,19 +118,8 @@ position = Vector2( 472.891, -517.225 )
 polygon = PoolVector2Array( -33.9891, 8.86658, -32.5113, -47.2893, -33.9891, -85.7117, -19.2112, -115.267, 7.38892, -94.5784, 16.2556, -48.7671, 25.1223, 16.2555, 14.7778, 29.5555 )
 
 [node name="Player" parent="YSort" groups=["player"] instance=ExtResource( 1 )]
-position = Vector2( 112.613, 1068.93 )
+position = Vector2( -2797.45, 791.866 )
 scale = Vector2( 1.16188, 1.16188 )
-
-[node name="Camera2D" type="Camera2D" parent="YSort/Player" groups=["camera"]]
-position = Vector2( 2.30768, 3.0769 )
-current = true
-zoom = Vector2( 0.65, 0.65 )
-limit_left = 63
-limit_top = -55
-limit_right = 3137
-limit_bottom = 969
-smoothing_enabled = true
-editor_draw_limits = true
 
 [node name="house 10" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( -1399.62, 1623.06 )
@@ -433,6 +422,11 @@ autoplay = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 12 )]
 visible = false
+
+[node name="CameraBounds" type="ColorRect" parent="."]
+margin_right = 3095.0
+margin_bottom = 1024.0
+color = Color( 1, 1, 1, 0 )
 
 [connection signal="body_entered" from="YSort/suspect1" to="YSort/suspect1" method="_on_suspect1_body_entered"]
 [connection signal="body_entered" from="YSort/suspect3" to="YSort/suspect3" method="_on_suspect3_body_entered"]

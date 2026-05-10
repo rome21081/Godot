@@ -3,7 +3,9 @@ extends CanvasLayer
 onready var hearts = [
 	$Hearts/Heart1,
 	$Hearts/Heart2,
-	$Hearts/Heart3
+	$Hearts/Heart3,
+	$Hearts/Heart4,
+	$Hearts/Heart5
 ]
 
 var shake_time = 0.0

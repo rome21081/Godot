@@ -21,20 +21,38 @@ func _ready():
 
 
 
+export var health = 1
+
+var knockback = Vector2()
+
 func _physics_process(delta):
 
-	# re-acquire player if lost
-	if player == null:
-		var players = get_tree().get_nodes_in_group("Player")
-		if players.size() > 0:
-			player = players[0]
-		else:
-			return
+	if knockback.length() > 0:
+		move_and_slide(knockback)
+		knockback = knockback.linear_interpolate(Vector2(), 0.2)
+		return
 
 	chase_player()
 
 	if player_in_attack_area:
 		attack_player()
+
+func take_damage(amount):
+
+	health -= amount
+
+	modulate = Color(1, 0.3, 0.3)
+
+	# push away from player
+	if player:
+		knockback = (global_position - player.global_position).normalized() * 300
+
+	yield(get_tree().create_timer(0.1), "timeout")
+
+	modulate = Color(1, 1, 1)
+
+	if health <= 0:
+		queue_free()
 
 
 func chase_player():

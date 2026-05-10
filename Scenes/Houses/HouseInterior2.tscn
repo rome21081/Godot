@@ -27,17 +27,6 @@ position = Vector2( -283, -264 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2, 249 )
 
-[node name="Camera2D" type="Camera2D" parent="Player" groups=["camera"]]
-position = Vector2( -6, -255 )
-current = true
-zoom = Vector2( 0.85, 1 )
-limit_left = -441
-limit_top = -385
-limit_right = 434
-limit_bottom = 329
-smoothing_enabled = true
-editor_draw_limits = true
-
 [node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
 visible = false
 
@@ -49,6 +38,13 @@ position = Vector2( 4, 0 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
 position = Vector2( -6, 457 )
 shape = SubResource( 5 )
+
+[node name="CameraBounds" type="ColorRect" parent="."]
+margin_left = -451.0
+margin_top = -438.0
+margin_right = 453.0
+margin_bottom = 329.0
+color = Color( 1, 1, 1, 0 )
 
 [connection signal="body_entered" from="Garlic" to="Garlic" method="_on_Garlic_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]

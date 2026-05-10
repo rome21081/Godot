@@ -16,6 +16,11 @@ func _physics_process(delta):
 
 func take_damage(amount):
 	health -= amount
+
+	modulate = Color(1, 0.3, 0.3)
+	yield(get_tree().create_timer(0.1), "timeout")
+
+	modulate = Color(1, 1, 1)
 	if health <= 0:
 		queue_free()
 		DialogueManager.start([

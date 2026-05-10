@@ -30,17 +30,6 @@ polygon = PoolVector2Array( -121, 306, -123, 25, -449, 19, -442, -282, -143, -28
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2, 249 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -6, -255 )
-current = true
-zoom = Vector2( 0.85, 1 )
-limit_left = -441
-limit_top = -385
-limit_right = 434
-limit_bottom = 329
-smoothing_enabled = true
-editor_draw_limits = true
-
 [node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
 visible = false
 
@@ -64,6 +53,13 @@ position = Vector2( 89, -202 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pray"]
 position = Vector2( -287, -181 )
 shape = SubResource( 6 )
+
+[node name="CameraBounds" type="ColorRect" parent="."]
+margin_left = -439.0
+margin_top = -421.0
+margin_right = 438.0
+margin_bottom = 345.0
+color = Color( 1, 1, 1, 0 )
 
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
 [connection signal="body_entered" from="BabyTyanak" to="." method="_on_BabyTyanak_body_entered"]
