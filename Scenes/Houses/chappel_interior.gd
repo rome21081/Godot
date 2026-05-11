@@ -6,8 +6,17 @@ func _ready():
 	get_node("Player/Light2D").visible = false 
 	yield(Fade.fade_in(1.0), "completed")
 	$AudioStreamPlayer2D.play()
-	DialogueManager.connect("dialogue_finished", self, "_on_chap5_finished")
-	
+	if not DialogueManager.is_connected(
+		"dialogue_finished",
+		self,
+		"_on_chap5_finished"
+	):
+		DialogueManager.connect(
+			"dialogue_finished",
+			self,
+			"_on_chap5_finished"
+		)
+
 	DialogueManager.start([
 		"It's the baby again",
 		"And it's crying in a corner"
@@ -123,8 +132,22 @@ func _on_Pray_body_entered(body):
 		])
 
 func _on_chap5_finished(chapter_id):
+
 	if chapter_id == 5 and GameState.tyanak_enlightened:
+
+		if DialogueManager.is_connected(
+			"dialogue_finished",
+			self,
+			"_on_chap5_finished"
+		):
+			DialogueManager.disconnect(
+				"dialogue_finished",
+				self,
+				"_on_chap5_finished"
+			)
+
 		yield(Fade.fade_out(1.0), "completed")
-		
+
 		GameState.chapter = 6
+
 		get_tree().change_scene("res://scenes/Main.tscn")

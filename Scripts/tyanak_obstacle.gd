@@ -62,13 +62,17 @@ func _on_TyanakDown2_body_entered(body):
 
 
 func _on_CryTrigger_body_entered(body):
-	if body.name != "Player":
-		return
+	if not triggered:
+		triggered = true
+		if body.name != "Player":
+			return
 
-	DialogueManager.start([
-		"The crying suddenly started again..."
-	])
-	$"../TyanakCry/AudioStreamPlayer2D".play()
-	yield(DialogueManager, "dialogue_finished")
-	
-	get_parent().get_node("TyanakObstacle").trigger_attack()
+		DialogueManager.start([
+			"The crying suddenly started again..."
+		])
+		$"../TyanakCry/AudioStreamPlayer2D".play()
+		yield(DialogueManager, "dialogue_finished")
+		
+		get_parent().get_node("TyanakObstacle").trigger_attack()
+	else:
+		return

@@ -10,15 +10,7 @@ export var max_enemies := 8
 
 func _ready():
 	
-	yield(get_tree(), "idle_frame")
-
-	if GameState.has_return_position:
-
-		var player = get_tree().get_nodes_in_group("Player")[0]
-
-		player.global_position = GameState.return_position + Vector2(0, 40)
-
-		GameState.has_return_position = false
+	
 	
 	Life.set_enabled(true)
 	yield(Fade.fade_in(1.0), "completed")
@@ -29,7 +21,7 @@ func _ready():
 			"you are back where you started from",
 			"The Dwende's are still infesting the town",
 			"Go to the forest and enter the cave"
-		])
+		],6)
 		spawn_enemies()
 	else:
 		DialogueManager.start([

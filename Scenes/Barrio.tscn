@@ -424,7 +424,7 @@ autoplay = true
 visible = false
 
 [node name="CameraBounds" type="ColorRect" parent="."]
-margin_right = 3095.0
+margin_right = 3072.0
 margin_bottom = 1024.0
 color = Color( 1, 1, 1, 0 )
 

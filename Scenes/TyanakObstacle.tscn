@@ -89,7 +89,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 335, -1 ), Vector2( 335, 588 ) ]
+"values": [ Vector2( 335, -100 ), Vector2( 335, 688 ) ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -104,7 +104,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 0.6, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 996, 2 ), Vector2( 996, 288 ), Vector2( 996, 298 ), Vector2( 996, 599 ) ]
+"values": [ Vector2( 996, -100 ), Vector2( 996, 288 ), Vector2( 996, 298 ), Vector2( 996, 699 ) ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -120,7 +120,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 5, 586 ), Vector2( 5, -1 ) ]
+"values": [ Vector2( 5, 699 ), Vector2( 5, -100 ) ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -135,7 +135,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 0.7, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 681, 599 ), Vector2( 681, 288 ), Vector2( 681, 250 ), Vector2( 681, -1 ) ]
+"values": [ Vector2( 681, 699 ), Vector2( 681, 288 ), Vector2( 681, 250 ), Vector2( 681, -100 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=17]
@@ -145,12 +145,11 @@ extents = Vector2( 10, 76 )
 script = ExtResource( 2 )
 
 [node name="TyanakUp1" type="Area2D" parent="."]
-position = Vector2( 5, 586 )
+position = Vector2( 5, 699 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TyanakUp1"]
 frames = SubResource( 5 )
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TyanakUp1"]
@@ -163,12 +162,12 @@ scale = Vector2( 5.141, 5.141 )
 texture = SubResource( 44 )
 
 [node name="TyanakUp2" type="Area2D" parent="."]
-position = Vector2( 681, 599 )
+position = Vector2( 681, 699 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TyanakUp2"]
 frames = SubResource( 5 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TyanakUp2"]
@@ -181,11 +180,12 @@ scale = Vector2( 5.141, 5.141 )
 texture = SubResource( 44 )
 
 [node name="TyanakDown1" type="Area2D" parent="."]
-position = Vector2( 335, -1 )
+position = Vector2( 335, -100 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TyanakDown1"]
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TyanakDown1"]
@@ -198,12 +198,13 @@ scale = Vector2( 5.141, 5.141 )
 texture = SubResource( 44 )
 
 [node name="TyanakDown2" type="Area2D" parent="."]
-position = Vector2( 996, 2 )
+position = Vector2( 996, -100 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TyanakDown2"]
 position = Vector2( 0, -2 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TyanakDown2"]
@@ -222,7 +223,7 @@ anims/up1 = SubResource( 15 )
 anims/up2 = SubResource( 16 )
 
 [node name="CryTrigger" type="Area2D" parent="."]
-position = Vector2( -299, 226 )
+position = Vector2( -144, 215 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CryTrigger"]
 position = Vector2( 0, 66 )

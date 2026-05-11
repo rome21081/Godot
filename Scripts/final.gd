@@ -86,7 +86,7 @@ func start_endurance_phase():
 	boss.set_process(false)
 	boss.set_physics_process(false)
 	$Boss/santelmo.playing = false
-	
+	GameState.chapter == 6
 	yield(Fade.fade_out(1.0), "completed")
 		
 	get_tree().change_scene("res://scenes/Title.tscn")

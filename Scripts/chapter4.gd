@@ -31,10 +31,7 @@ func _ready():
 			"There's a pregnant woman and a child there",
 			"It's possible that the aswang atack them first"
 		])
-		var light = get_node_or_null("YSort/Player/Light2D")
-	
-		if light:
-			light.visible = false
+		get_node("YSort/Player/Light2D").visible = true
 		get_node("CanvasModulate").visible = true
 		
 	elif GameState.has_garlic:

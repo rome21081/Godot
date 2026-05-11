@@ -10,6 +10,7 @@ onready var camera = $Camera2D
 
 func _ready():
 	Life.set_enabled(true)
+	print(GameState.chapter)
 	
 	var bounds = get_tree().get_current_scene().get_node("CameraBounds")
 

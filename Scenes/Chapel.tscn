@@ -156,7 +156,7 @@ stretch_mode = 4
 polygon = PoolVector2Array( -9.0545, -4.22986, 4.39984, 1008.21, 3068.63, 1011.57, 3065.26, 1099.03, -62.8719, 1112.48, -62.8719, -128.683, 3193.08, -101.774, 3176.26, 1102.39, 3074.03, 1002.9, 3075.35, 9.22449, 2929.81, 8.5896 )
 
 [node name="FakeBaby" parent="." instance=ExtResource( 8 )]
-position = Vector2( 698, 422 )
+position = Vector2( 954, 462 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
@@ -555,8 +555,8 @@ polygon = PoolVector2Array( 13, 834, 134, 793, 273, 872, 432, 880, 530, 706, 602
 polygon = PoolVector2Array( 43, 121, 239, 136, 473, 132, 594, 249, 749, 283, 828, 344, 934, 291, 1465, 419, 2427, 375, 2795, 57, 2852, 260, 3271, 94, 3173, -121, -29, -113, -25, 121 )
 
 [node name="Fog" type="Particles2D" parent="StaticBody2D"]
-modulate = Color( 1, 1, 1, 0.235294 )
-position = Vector2( 1636, 481 )
+modulate = Color( 1, 1, 1, 0.470588 )
+position = Vector2( 1983, 497 )
 process_material = SubResource( 3 )
 texture = SubResource( 5 )
 

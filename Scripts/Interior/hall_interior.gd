@@ -37,7 +37,8 @@ func _process(delta):
 			DialogueManager.start([
 				"You must be Sio, The Babaylan already told me about you.",
 				"An Aswang is Wrecking Havoc on this town.",
-				"I want you to investigate the towns people."
+				"I want you to investigate the towns people.",
+				"Also report back to me when you found it"
 			])
 			GameState.talked_to_captain = true
 		
